@@ -27,7 +27,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Restaurant the Tyme</b></a>
+    <a href="../../index2.html"><b>Thyme Restaurant</b></a>
 
     <?php 
       if (isset($_GET['register']) && $_GET['register'] == 'success') {
@@ -36,17 +36,23 @@
             <div class="card card-outline card-success">
               <div class="card-header">
                 <h3 class="card-title">Prawidłowo dodano użytkownika</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                  </button>
-                </div>
-                <!-- /.card-tools -->
               </div>
-              
             </div>
           
 SUCCESS;
+      }
+    ?>
+    <?php 
+      if (isset($_GET['logout']) && $_GET['logout'] == 'success') {
+        echo <<<LOGOUT
+         
+            <div class="card card-outline card-success">
+              <div class="card-header">
+                <h3 class="card-title">Poprawnie wylogowano</h3> 
+              </div>              
+            </div>
+          
+LOGOUT;
       }
     ?>
     <?php 
@@ -68,11 +74,11 @@ ERROR;
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Zaloguj się do swojego konta</p>
 
       <form action="./scripts/login.php" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email" name="email">
+          <input type="email" class="form-control" placeholder="E-mail" name="email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -80,7 +86,7 @@ ERROR;
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
+          <input type="password" class="form-control" placeholder="Hasło" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -92,13 +98,13 @@ ERROR;
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
-                Remember Me
+                Zapamiętaj mnie
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">Zaloguj</button>
           </div>
           <!-- /.col -->
         </div>
@@ -108,10 +114,10 @@ ERROR;
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="./pages/forgot-password.html">I forgot my password</a>
+        <a href="./pages/forgot-password.html">Zapomniałem hasła</a>
       </p>
       <p class="mb-0">
-        <a href="./pages/register.php" class="text-center">Register a new membership</a>
+        <a href="./pages/register.php" class="text-center">Zarejestruj nowego użytkownika</a>
       </p>
     </div>
     <!-- /.login-card-body -->

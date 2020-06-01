@@ -38,32 +38,32 @@
             </a>
             <ul class="nav nav-treeview">              
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link active">
+                <a href="./admin.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Statystyki</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./admin2.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Menu dnia</p>
                 </a>
               </li>
               
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./admin3.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Zamówienia</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="./admin4.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Historia zamówień</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="../../scripts/logout.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Wyloguj</p>
                 </a>

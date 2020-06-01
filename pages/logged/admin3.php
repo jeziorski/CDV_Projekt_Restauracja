@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Administrator - Statystyki</title>
+  <title>Administrator - Menu dnia</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
@@ -38,7 +38,7 @@
   <!-- /Lewy panel -->
   <!-- Content Wrapper. Zawartość strony -->
   <?php
-  require_once '../layout/content_admin1.php';
+  require_once '../layout/content_admin2.php';
   ?>
   <!-- /.content-wrapper Zawartość strony -->
   <!-- Main Footer -->
