@@ -38,23 +38,11 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../logged/client.php" class="nav-link">
+                <a href="../logged/kuchnia.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Złóż zamówienie</p>
+                  <p>Zamówienia</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="../logged/client2.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Moje zamówienia</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../logged/client3.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Informacje o koncie</p>
-                </a>
-              </li>
+              </li>              
               <li class="nav-item">
                 <a href="../../scripts/logout.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

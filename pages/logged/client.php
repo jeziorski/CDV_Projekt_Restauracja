@@ -1,6 +1,6 @@
 <?php
   session_start();
-  if(!isset($_SESSION['logged']['email']) && ($_SESSION['logged']['permission']) != '2'){
+  if(!isset($_SESSION['logged']['email']) || ($_SESSION['logged']['permission']) != '2'){
     header('location: ../../index.php'); 
     exit();
   }

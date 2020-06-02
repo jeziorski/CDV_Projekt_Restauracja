@@ -1,7 +1,7 @@
 <?php
   session_start();
-  if(!isset($_SESSION['logged']['email']) && ($_SESSION['logged']['permission']) != '1'){
-    header('location: ../../index.php'); 
+  if(!isset($_SESSION['logged']['email']) || ($_SESSION['logged']['permission']) != '1'){
+    header('location: ../../index.php');
     exit();
   }
 ?>

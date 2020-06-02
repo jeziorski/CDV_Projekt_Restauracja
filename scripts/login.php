@@ -59,7 +59,7 @@
 		            break;
 
               case '3':
-		            header('location: ../pages/logged/moderator.php');
+		            header('location: ../pages/logged/kuchnia.php');
 		            break;
             }
 
