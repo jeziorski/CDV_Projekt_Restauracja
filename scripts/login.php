@@ -1,19 +1,19 @@
 <?php
   session_start();
   if (isset($_SESSION['logged']['email'])){
-  switch ($_SESSION['logged']['permission']) {
+    switch ($_SESSION['logged']['permission']) {
 	            case '1':
 		            header('location: ../pages/logged/admin.php');
 		            break;
 
               case '2':
-		            header('location: ../pages/logged/user.php');
+		            header('location: ../pages/logged/client.php');
 		            break;
 
               case '3':
-		            header('location: ../pages/logged/moderator.php');
+		            header('location: ../pages/logged/kuchnia.php');
 		            break;
-            }
+    }
             //exit();  //zakończenie kodu
   }
 
@@ -55,7 +55,7 @@
 		            break;
 
               case '2':
-		            header('location: ../pages/logged/user.php');
+		            header('location: ../pages/logged/client.php');
 		            break;
 
               case '3':
