@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
+    "",
+    "\\pages",
+    "\\pages\\layout",
+    "\\pages\\logged",
     "\\scripts"
   ],
+  "SelectedNode": "\\pages\\layout\\content_admin3.php",
   "PreviewInSolutionExplorer": false
 }
