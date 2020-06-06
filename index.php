@@ -27,7 +27,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Thyme Restaurant</b></a>
+    <a href="./index.html"><b>The Thyme</b></a>
 
     <?php 
       if (isset($_GET['register']) && $_GET['register'] == 'success') {
