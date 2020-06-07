@@ -46,9 +46,9 @@
       <div class="inner">
         <h3 class="masthead-brand">The Thyme</h3>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" href="./index.html">Strona główna</a>
-          <a class="nav-link active" href="./menu.html">Menu</a>
-          <a class="nav-link" href="./contact.html">Kontakt</a>
+          <a class="nav-link" href="./main.php">Strona główna</a>
+          <a class="nav-link active" href="#">Menu</a>
+          <a class="nav-link" href="./contact.php">Kontakt</a>
           <a class="nav-link" href="./index.php">Zamów online</a>
           <a class="nav-link" href="pages/register.php">Rejestracja</a>
         </nav>
@@ -60,57 +60,28 @@
         <main role="main" class="inner cover">
           <div class="row">
             <div class="col-sm-12">
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper">
-                  <div class="ribbon bg-primary">
-                    Ribbon
+              <div class="position-relative p-3 bg-secondary" style="height: 180px">
+                <div class="ribbon-wrapper ribbon-xl">
+                  <div class="ribbon bg-success">
+                    BESTSELLER
                   </div>
                 </div>
-                Ribbon Default <br />
-                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
+                Ribbon Extra Large <br />
+                <small>.ribbon-wrapper.ribbon-xl .ribbon</small>
               </div>
             </div>
           </div>
-
-          </br>
+          <br/>
           <div class="row">
             <div class="col-sm-12">
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper">
-                  <div class="ribbon bg-primary">
-                    Ribbon
+              <div class="position-relative p-3 bg-secondary" style="height: 180px">
+                <div class="ribbon-wrapper ribbon-xl">
+                  <div class="ribbon bg-success">
+                    BESTSELLER
                   </div>
                 </div>
-                Ribbon Default <br />
-                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-              </div>
-            </div>
-          </div>
-          </br>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper">
-                  <div class="ribbon bg-primary">
-                    Ribbon
-                  </div>
-                </div>
-                Ribbon Default <br />
-                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-              </div>
-            </div>
-          </div>
-          </br>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper">
-                  <div class="ribbon bg-primary">
-                    Ribbon
-                  </div>
-                </div>
-                Ribbon Default <br />
-                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
+                Ribbon Extra Large <br />
+                <small>.ribbon-wrapper.ribbon-xl .ribbon</small>
               </div>
             </div>
           </div>

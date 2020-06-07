@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Strona główna restauracji The Thyme">
   <meta name="author" content="Daniel Jeziorski & Łukasz Adamczak">
-  <title>The Thyme - Kontakt</title>
+  <title>The Thyme - Strona Główna</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
   <!-- Font Awesome -->
@@ -46,45 +46,61 @@
       <div class="inner">
         <h3 class="masthead-brand">The Thyme</h3>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" href="./index.html">Strona główna</a>
-          <a class="nav-link" href="./menu.html">Menu</a>
-          <a class="nav-link active" href="./contact.html">Kontakt</a>
+          <a class="nav-link active" href="./main.php">Strona główna</a>
+          <a class="nav-link" href="./menu.php">Menu</a>
+          <a class="nav-link" href="./contact.php">Kontakt</a>
           <a class="nav-link" href="./index.php">Zamów online</a>
           <a class="nav-link" href="pages/register.php">Rejestracja</a>
         </nav>
       </div>
     </header>
 
-    <main role="main" class="inner cover">
-      <div class="col-md-12 col-sm-12 col-12">
-        <div class="info-box bg-secondary">
-          <span class="info-box-icon bg-secondary"><i class="fas fa-envelope"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Mail</span>
-            <span class="info-box-number">1,410</span>
+    <section class="content">
+      <div class="container-fluid">
+        <main role="main" class="inner cover">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="position-relative p-3 bg-gray" style="height: 180px">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon bg-primary">
+                    Ribbon
+                  </div>
+                </div>
+                Ribbon Default <br />
+                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
+              </div>
+            </div>
           </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
-        <div class="info-box bg-secondary">
-          <span class="info-box-icon bg-secondary"><i class="fas fa-phone"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Telefon</span>
-            <span class="info-box-number">1,410</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <div class="info-box bg-secondary">
-          <span class="info-box-icon bg-secondary"><i class="fas fa-map-marker-alt"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Lokalizacja</span>
-            <span class="info-box-number">1,410</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-      </div>
-    </main>
+          </br>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="position-relative p-3 bg-gray" style="height: 180px">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon bg-primary">
+                    Ribbon
+                  </div>
+                </div>
+                Ribbon Default <br />
+                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
+              </div>
+            </div>
 
+            <div class="col-sm-6">
+              <div class="position-relative p-3 bg-gray" style="height: 180px">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon bg-primary">
+                    Ribbon
+                  </div>
+                </div>
+                Ribbon Default <br />
+                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
+              </div>
+            </div>
+          </div>
+          </br>
+        </main>
+      </div>
+    </section>
     <footer class="mastfoot mt-auto">
       <div class="inner">
         <p>The Thyme, by Daniel Jeziorski & Łukasz Adamczak</p>

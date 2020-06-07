@@ -26,9 +26,9 @@
   <header class="masthead mb-auto">
     <div class="inner">
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link" href="../index.html">Strona główna</a>
-        <a class="nav-link" href="../menu.html">Menu</a>
-        <a class="nav-link" href="../contact.html">Kontakt</a>
+        <a class="nav-link" href="../index.php">Strona główna</a>
+        <a class="nav-link" href="../menu.php">Menu</a>
+        <a class="nav-link" href="../contact.php">Kontakt</a>
         <a class="nav-link" href="../index.php">Zamów online</a>
         <a class="nav-link" href="#">Rejestracja</a>
       </nav>
@@ -76,6 +76,8 @@ ERROR;
             </div>
           </div>
         </div>
+
+        
 
          <div class="input-group mb-3">
           <select name="city" class="form-control">

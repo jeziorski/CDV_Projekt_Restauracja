@@ -27265,6 +27265,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   right: 0px;
   top: 26px;
   width: 160px;
+  border-radius: 25px;
 }
 
 .ribbon-wrapper.ribbon-xl {
@@ -27272,11 +27273,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   width: 180px;
 }
 
-.ribbon-wrapper.ribbon-xl .ribbon {
-  right: 4px;
-  top: 47px;
-  width: 240px;
-}
+  .ribbon-wrapper.ribbon-xl .ribbon {
+    right: 4px;
+    top: 47px;
+    width: 240px;
+  }
 
 .ribbon-wrapper .ribbon {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -27291,7 +27292,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   top: 10px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  width: 90px;
+  width: 90px;  
 }
 
 .ribbon-wrapper .ribbon::before, .ribbon-wrapper .ribbon::after {
