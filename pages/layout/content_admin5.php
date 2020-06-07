@@ -95,33 +95,65 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>ID użytkownika</th>
-                      <th>Mail</th>
-                      <th>Status konta</th>
-                      <th>Typ konta</th>
+                      <th>ID</th>
+                      <th>E-mail</th>
+                      <th>Uprawnienia</th>
+                      <th>Status</th>
+                      <th>Ostatnie logowanie</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql5 = "SELECT u.id, u.email, p.permission, s.status, u.last_login FROM `user` as u 
+                    INNER JOIN permission as p ON u.permission_id=p.id 
+                    INNER JOIN status as s ON u.status_id=s.id";
+                    $result = $conn->query($sql5);
+                    while ($user = $result->fetch_assoc()){
+                    echo<<<USERS
                     <tr>
-                      <td><a href="../../pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                    </tr>
+                      <td>$user[id]</td>
+                      <td>$user[email]</td>
+USERS;
+                    switch($user['permission']){
+                      case 'administrator':
+                        echo '<td><span class="badge badge-info">administrator</span></td>';
+                      break;
+                      case 'user':
+                        echo '<td><span class="badge badge-secondary">user</span></td>';
+                      break;
+                      case 'pracownik':
+                        echo '<td><span class="badge badge-success">pracownik</span></td>';
+                      break;
+                    }
+                    switch($user['status']){
+                      case 'aktywny':
+                        echo '<td><span class="badge badge-success">aktywny</span></td>';
+                      break;
+                      case 'nieaktywny':
+                        echo '<td><span class="badge badge-warning">nieaktywny</span></td>';
+                      break;
+                      case 'zablokowany':
+                        echo '<td><span class="badge badge-danger">zablokowany</span></td>';
+                      break;
+                    }
+                    if($user['last_login'] == NULL){
+                    echo '<td>Brak logowania</td></tr>';
+                    }else{
+                    echo <<<USERS
+                    <td>$user[last_login]</td></tr>
+USERS;                   
+                    }
+                    
+}
+                    ?>
+                                        
                     </tbody>
                   </table>
                 </div>
                 <!-- /.table-responsive -->
               </div>
               <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Odśwież</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">Zobacz wszystkie zamówienia</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
             <!-- /.card -->
           </div>
           <!-- Dzisiejsze menu -->
