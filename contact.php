@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -61,7 +64,17 @@
           <span class="info-box-icon bg-secondary"><i class="fas fa-envelope"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Mail</span>
-            <span class="info-box-number">kontakt@thethyme.com</span><!-- dane kontaktowe -->
+            <span class="info-box-number">
+            <?php 
+                    require_once './scripts/connect.php';
+                    $sql1 = "SELECT adres, telefon, mail FROM `contact` limit 1";
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <b>$user[mail]</b>
+USERS;           
+                    }?>
+            </span><!-- dane kontaktowe -->
           </div>
           <!-- /.info-box-content -->
         </div>
@@ -70,7 +83,17 @@
           <span class="info-box-icon bg-secondary"><i class="fas fa-phone"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Telefon</span>
-            <span class="info-box-number">1,410</span> <!-- dane kontaktowe z usera-->
+            <span class="info-box-number">
+            <?php 
+                    require_once './scripts/connect.php';
+                    $sql1 = "SELECT adres, telefon, mail FROM `contact` limit 1";
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <b>$user[telefon]</b>
+USERS;           
+                    }?>
+            </span> <!-- dane kontaktowe z usera-->
           </div>
           <!-- /.info-box-content -->
         </div>
@@ -78,7 +101,17 @@
           <span class="info-box-icon bg-secondary"><i class="fas fa-map-marker-alt"></i></span>
           <div class="info-box-content">
             <span class="info-box-text">Lokalizacja</span>
-            <span class="info-box-number">1,410</span> <!-- dane kontaktowe z usera-->
+            <span class="info-box-number">
+            <?php 
+                    require_once './scripts/connect.php';
+                    $sql1 = "SELECT adres, telefon, mail FROM `contact` limit 1";
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <b>$user[adres]</b>
+USERS;           
+                    }?>
+            </span> <!-- dane kontaktowe z usera-->
           </div>
           <!-- /.info-box-content -->
         </div>

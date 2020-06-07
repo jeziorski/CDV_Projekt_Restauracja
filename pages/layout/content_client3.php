@@ -28,28 +28,40 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form role="form">
+              
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Miejscowość</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Miejścowość">
-                  </div>
+                    <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = sprintf("SELECT street_name, street_num, flat_num FROM user WHERE email='%s'",
+                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Miejscowość" value="Poznań" >
+                    </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Kod pocztowy</label>
                     <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Kod pocztowy">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Ulica</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ulica">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ulica" value=$user[street_name]>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Numer budynku</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Numer budynku">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Numer budynku" value=$user[street_num]>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Numer lokalu</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Numer lokalu">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Numer lokalu" value=$user[flat_num]>
                   </div>
                 </div>
+USERS;           
+                    }?>
+                    
+                  
                 <!-- /.card-body -->
 
                 <div class="card-footer">
@@ -71,21 +83,30 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Imię</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Imię">
+                    <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = sprintf("SELECT name, surname, email, phone FROM user WHERE email='%s'",
+                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Imię" value="$user[name]">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Nazwisko</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nazwisko">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nazwisko" value="$user[surname]">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Adres e-mail</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Adres e-mail">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Adres e-mail" value="$user[email]">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Numer telefonu</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Numer telefonu">
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Numer telefonu" value="$user[phone]">
                   </div>
                 </div>
+USERS;           
+                    }?>                    
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Zaktualizuj dane osobowe</button>
                 </div>
