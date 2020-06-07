@@ -104,12 +104,12 @@
               <form role="form">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Hasło</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło">
+                    <label for="exampleInputEmail1">Nowe hasło</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nowe hasło">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Powtórz hasło</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Powtórz hasło">
+                    <label for="exampleInputPassword1">Powtórz nowe hasło</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Powtórz nowe hasło">
                   </div>
                 </div>
                 <div class="card-footer">

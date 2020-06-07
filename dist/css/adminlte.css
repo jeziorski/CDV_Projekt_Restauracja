@@ -27247,6 +27247,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .ribbon-wrapper {
   height: 70px;
+  margin-top: 5px;
   overflow: hidden;
   position: absolute;
   right: -2px;
