@@ -29,7 +29,7 @@
 
     $sql = sprintf("SELECT * FROM user WHERE email='%s'",
             mysqli_real_escape_string($conn, $email));
-
+    
     if($result = $conn->query($sql)){
       $count = $result->num_rows;
       if ($count == 1){
@@ -47,6 +47,9 @@
             $_SESSION['logged']['name'] = $user['name'];
             $_SESSION['logged']['surname'] = $user['surname'];
             $_SESSION['logged']['email'] = $user['email'];
+            $sql2 = sprintf("UPDATE user SET last_login = CURRENT_TIMESTAMP() WHERE email='%s'",
+            mysqli_real_escape_string($conn, $email));
+            $conn->query($sql2);
             $conn->close();
 
             switch ($_SESSION['logged']['permission']) {

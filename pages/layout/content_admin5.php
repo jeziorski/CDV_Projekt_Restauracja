@@ -22,21 +22,22 @@
       <div class="container-fluid">
         <!-- Info boxes -->
         <div class="row">
+        
+       
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
-
               <div class="info-box-content">
                 <span class="info-box-text">Aktywni:</span>
-                <span class="info-box-number">
-                  10
-                  <small>%</small>
-                </span>
+                <span class="info-box-number"></span><!-- DANE Z BAZY -->
               </div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
           </div>
+      
+        
+          
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
@@ -44,7 +45,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Nieaktywni:</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number"></span><!-- DANE Z BAZY -->
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -60,7 +61,7 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Zablokowani:</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number"></span><!-- DANE Z BAZY -->
               </div>
               <!-- /.info-box-content -->
             </div>
