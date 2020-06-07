@@ -8,15 +8,10 @@
         <a href="../../index.html" class="nav-link">Strona główna</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Dzisiejsze menu</a>
+        <a href="../../menu.html" class="nav-link">Dzisiejsze menu</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Kontakt</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">
-        Złóż zamówienie
-        </a>
+        <a href="../../contact.html" class="nav-link">Kontakt</a>
       </li>
     </ul>      
   </nav>

@@ -24,9 +24,25 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition register-page"> 
+<div class="cover-container w-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="./index.html">Strona główna</a>
+        <a class="nav-link" href="./menu.html">Menu</a>
+        <a class="nav-link" href="./contact.html">Kontakt</a>
+        <a class="nav-link" href="./index.php">Zamów online</a>
+        <a class="nav-link" href="pages/register.php">Rejestracja</a>
+      </nav>
+    </div>
+  </header>
+</div>
+
 <div class="login-box">
+
   <div class="login-logo">
+
     <a href="./index.html"><b>The Thyme</b></a>
 
     <?php 
@@ -112,10 +128,6 @@ ERROR;
 
       
       <!-- /.social-auth-links -->
-
-      <p class="mb-1">
-        <a href="./pages/forgot-password.html">Zapomniałem hasła</a>
-      </p>
       <p class="mb-0">
         <a href="./pages/register.php" class="text-center">Zarejestruj nowego użytkownika</a>
       </p>

@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\pages",
-    "\\pages\\layout",
-    "\\pages\\logged",
-    "\\scripts"
+    "\\pages\\logged"
   ],
-  "SelectedNode": "\\pages\\layout\\content_admin3.php",
+  "SelectedNode": "\\index.php",
   "PreviewInSolutionExplorer": false
 }

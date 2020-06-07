@@ -2,7 +2,8 @@
   session_start();
   if (!empty($_POST['name']) && !empty($_POST['surname'])
   && !empty($_POST['email1'])  && !empty($_POST['email2'])
-  && !empty($_POST['pass1'])  && !empty($_POST['pass2'])  && !empty($_POST['birthday'])) {
+  && !empty($_POST['pass1'])  && !empty($_POST['pass2'])  
+  && !empty($_POST['birthday']) && !empty($_POST['phone'])) {
     $error=0;
     if (!isset($_POST['terms']))    {
       $_SESSION['error'] = 'Zaznacz zgodę na warunki w regulaminie!';
@@ -39,16 +40,15 @@
       $surname = $_POST['surname'];
       $email = $_POST['email1'];
       $pass = $_POST['pass1'];
+      $phone = $_POST['phone'];
       //szyfrowanie hasła za pomocą ARGON2ID
       //dzialamy tylko na varchar(100) 	utf8mb4_general_ci 	
       $pass = password_hash($pass, PASSWORD_ARGON2ID);
-      //$birthday = $_POST['bithday'];
       $city = $_POST['city'];
-      $nationality =1;
 
-      $sql = "INSERT INTO `user`(`name`, `surname`,`city_id`, `nationality_id`, `email`, `pass`) VALUES (?, ?, ?, ?, ?, ?)";
+      $sql = "INSERT INTO `user`(`name`, `surname`,`city_id`, `phone`, `email`, `pass`) VALUES (?, ?, ?, ?, ?, ?)";
       $stmt = $conn->prepare($sql); //unikniecie sql-incjection
-      $stmt->bind_param("ssiiss", $name, $surname, $city, $nationality, $email, $pass);
+      $stmt->bind_param("ssisss", $name, $surname, $city, $phone, $email, $pass);
       //s-string, i-int, i inne
       if($stmt->execute()){
         header('location: ../index.php?register=success');
