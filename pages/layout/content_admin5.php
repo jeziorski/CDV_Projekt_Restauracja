@@ -26,10 +26,20 @@
        
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-check-circle"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Aktywni:</span>
-                <span class="info-box-number"></span><!-- DANE Z BAZY -->
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT COUNT(*) as total FROM `user` WHERE status_id='1'";
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <b>$user[total]</b>
+USERS;           
+                    }?>
+                </span><!-- DANE Z BAZY -->
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -41,11 +51,21 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-minus-circle"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Nieaktywni:</span>
-                <span class="info-box-number"></span><!-- DANE Z BAZY -->
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql2 = "SELECT COUNT(*) as total FROM `user` WHERE status_id='2'";
+                    $result2 = $conn->query($sql2);
+                    while ($user = $result2->fetch_assoc()){
+                    echo<<<USERS
+                    <b>$user[total]</b>
+USERS;           
+                    }?>
+                </span><!-- DANE Z BAZY -->
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -58,10 +78,20 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-exclamation-circle"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Zablokowani:</span>
-                <span class="info-box-number"></span><!-- DANE Z BAZY -->
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql3 = "SELECT COUNT(*) as total FROM `user` WHERE status_id='3'";
+                    $result3 = $conn->query($sql3);
+                    while ($user = $result3->fetch_assoc()){
+                    echo<<<USERS
+                    <b>$user[total]</b>
+USERS;           
+                    }?>
+                </span><!-- DANE Z BAZY -->
               </div>
               <!-- /.info-box-content -->
             </div>

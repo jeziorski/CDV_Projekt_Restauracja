@@ -48,7 +48,7 @@
             $_SESSION['logged']['surname'] = $user['surname'];
             $_SESSION['logged']['email'] = $user['email'];
             $sql2 = sprintf("UPDATE user SET last_login = CURRENT_TIMESTAMP() WHERE email='%s'",
-            mysqli_real_escape_string($conn, $email));
+            mysqli_real_escape_string($conn, $email)); 
             $conn->query($sql2);
             $conn->close();
 
