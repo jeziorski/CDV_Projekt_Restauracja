@@ -69,6 +69,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./admin6.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kontakt</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="../../scripts/logout.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Wyloguj</p>
