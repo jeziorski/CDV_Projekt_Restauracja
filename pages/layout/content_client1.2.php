@@ -4,12 +4,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Złóż zamówienie</h1>
+            <h1 class="m-0 text-dark">Złóż zamówienie 2/3</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Złóż zamówienie</li>
+              <li class="breadcrumb-item active">Złóż zamówienie 2/3</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -21,66 +21,61 @@
     <section class="content">
       <div class="container-fluid">
       
+          <form>
       
-                    <?php 
+                    <?php
                     require_once '../../scripts/connect.php';
-                    $sql1 = sprintf("SELECT street_name, street_num, flat_num FROM `user` where email='%s'",
-                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
-                    $result1 = $conn->query($sql1);
-                    while ($user = $result1->fetch_assoc()){
-                    echo<<<USERS
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card card-secondary">
-              <div class="card-header">
-                <h3 class="card-title">Adres dostawy</h3>
+                    $sql5 = "SELECT m.id_potrawy, m.cena, dl.nazwa_potrawy, dl.opis_potrawy, e.opis_etykiety FROM `menu` as m 
+                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy
+                    INNER JOIN etykiety as e ON e.id_etykiety=m.id_etykiety
+                    WHERE m.data=CURDATE()";//zamówienia z dzisiaj
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<DISH
+            <div class="row">
+              <div class="col-md-6">
+            <div class="card card-widget widget-user">
+              <!-- Add the bg color to the header using any of the bg-* classes -->
+              <div class="widget-user-header bg-success">
+                <h3 class="widget-user-username">$dish[nazwa_potrawy]</h3></br>
+                <h5 class="widget-user-desc">$dish[opis_potrawy]</h5>
               </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form action="../scripts/add_order.php" method="post">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Nazwa ulicy:</label>
-                    <input type="text" class="form-control" placeholder="Nazwa ulicy" value="$user[street_name]">
+              
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                      <div class="form-check">
+                          <input type="checkbox" class="form-check-input" name="$dish[id_potrawy]num">
+                          <label class="form-check-label">Zamawiam</label>
+                      </div>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Numer domu</label>
-                    <input type="text" class="form-control" placeholder="Numer domu" value="$user[street_num]">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Numer lokalu</label>
-                    <input type="text" class="form-control" placeholder="Numer lokalu" value="$user[flat_num]">
-                  </div>
-                </div>
-                <div class="col-sm-6">
+                  <!-- /.col -->
+                  <div class="col-sm-4 border-right">
+                    <div class="description-block">
                       <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                          <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1">
-                          <label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>                          
-                        </div>
-                        <input type="text" class="form-control" placeholder="Numer lokalu" value="$user[flat_num]">
+                        <input type="number" placeholder="Ilość" class="form-control min="0"/>
                       </div>
-                      <div class="form-group">                      
-                      
-                      </div>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-4">
+                    <div class="description-block">
+                      <h5 class="description-header">$dish[cena] zł / porcja</h5>
+                    </div>
+                  </div>
                 </div>
-            <div class="card-footer">
-              <button type="submit" class="btn btn-primary">Rozpocznij składanie zamówienia</button>
-            </div>
-            </form>
+              </div>
             </div>
           </div>
-        </div>
-USERS;
-          echo<<<DISH
-                    
-                    
-                    
-DISH;          
 
-                    }?>                    
-                
-
+          </div>
+          <br/>
+DISH;
+                    }?>                   
+      <button type="submit" class="btn btn-primary">Dodaj produkty do zamówienia</button>          
+      </form>
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->

@@ -62,7 +62,8 @@
                     require_once './scripts/connect.php';
                     $sql5 = "SELECT m.cena, dl.nazwa_potrawy, dl.opis_potrawy, e.opis_etykiety FROM `menu` as m 
                     INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy
-                    INNER JOIN etykiety as e ON e.id_etykiety=m.id_etykiety";//zamówienia
+                    INNER JOIN etykiety as e ON e.id_etykiety=m.id_etykiety
+                    WHERE m.data=CURDATE()";//zamówienia
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
                     echo<<<DISH
@@ -74,6 +75,7 @@
                     $dish[opis_etykiety]
                   </div>
                 </div>
+                </br>
                 <big>$dish[nazwa_potrawy]</big> <br />
                 <big>$dish[opis_potrawy]</big><br />
                 <big>$dish[cena] zł</big>
