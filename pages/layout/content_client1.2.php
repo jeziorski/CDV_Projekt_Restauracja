@@ -37,26 +37,33 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="../../scripts/add_order.php" method="post">
+              <form action="../scripts/add_order.php" method="post">
                 <div class="card-body">
-                  <div class="custom-control custom-checkbox">
-                          <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="odbiór osobisty" name="odbior">
-                          <label for="customCheckbox1" class="custom-control-label">Odbiorę osobiście</label>
-                  </div><br/>
                   <div class="form-group">
-                    <label>Nazwa ulicy:</label>
-                    <input type="text" class="form-control" id="adres" placeholder="Nazwa ulicy"  name="street_name">
+                    <label for="exampleInputEmail1">Nazwa ulicy:</label>
+                    <input type="text" class="form-control" placeholder="Nazwa ulicy" value="$user[street_name]">
                   </div>
                   <div class="form-group">
-                    <label>Numer domu</label>
-                    <input type="text" class="form-control" id="adres" placeholder="Numer domu"  name="street_num">
+                    <label for="exampleInputPassword1">Numer domu</label>
+                    <input type="text" class="form-control" placeholder="Numer domu" value="$user[street_num]">
                   </div>
                   <div class="form-group">
-                    <label>Numer lokalu</label>
-                    <input type="text" class="form-control" id="adres" placeholder="Numer lokalu"  name="flat_num">
+                    <label for="exampleInputPassword1">Numer lokalu</label>
+                    <input type="text" class="form-control" placeholder="Numer lokalu" value="$user[flat_num]">
                   </div>
                 </div>
-                
+                <div class="col-sm-6">
+                      <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1">
+                          <label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>                          
+                        </div>
+                        <input type="text" class="form-control" placeholder="Numer lokalu" value="$user[flat_num]">
+                      </div>
+                      <div class="form-group">                      
+                      
+                      </div>
+                </div>
             <div class="card-footer">
               <button type="submit" class="btn btn-primary">Rozpocznij składanie zamówienia</button>
             </div>
@@ -73,7 +80,7 @@ DISH;
 
                     }?>                    
                 
-      
+
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->
