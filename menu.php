@@ -58,33 +58,31 @@
     <section class="content">
       <div class="container-fluid">
         <main role="main" class="inner cover">
+        <?php
+                    require_once './scripts/connect.php';
+                    $sql5 = "SELECT m.cena, dl.nazwa_potrawy, dl.opis_potrawy, e.opis_etykiety FROM `menu` as m 
+                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy
+                    INNER JOIN etykiety as e ON e.id_etykiety=m.id_etykiety";//zamówienia
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<DISH
           <div class="row">
             <div class="col-sm-12">
               <div class="position-relative p-3 bg-secondary" style="height: 180px">
                 <div class="ribbon-wrapper ribbon-xl">
                   <div class="ribbon bg-success">
-                    BESTSELLER
+                    $dish[opis_etykiety]
                   </div>
                 </div>
-                Ribbon Extra Large <br />
-                <small>.ribbon-wrapper.ribbon-xl .ribbon</small>
+                <big>$dish[nazwa_potrawy]</big> <br />
+                <big>$dish[opis_potrawy]</big><br />
+                <big>$dish[cena] zł</big>
               </div>
             </div>
           </div>
           <br/>
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="position-relative p-3 bg-secondary" style="height: 180px">
-                <div class="ribbon-wrapper ribbon-xl">
-                  <div class="ribbon bg-success">
-                    BESTSELLER
-                  </div>
-                </div>
-                Ribbon Extra Large <br />
-                <small>.ribbon-wrapper.ribbon-xl .ribbon</small>
-              </div>
-            </div>
-          </div>
+DISH;
+                    }?>
         </main>
       </div>
     </section>

@@ -20,25 +20,17 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- Info boxes -->
-        
-
-        
-
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
           <div class="col-md-12"> 
-            <!-- TABLE: LATEST ORDERS -->
-            
-            <!-- /.card -->
           </div>
           <!-- Dzisiejsze menu -->
           <!-- /.col -->
           <div class="col-md-12"> 
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
-              <div class="card-header border-transparent">
+              <div class="card-header border-transparent  bg-secondary">
                 <h3 class="card-title">Dzisiejsze menu:</h3>
 
                 <div class="card-tools">
@@ -63,15 +55,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="../../pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
+                    <?php
+                    require_once '../../scripts/connect.php';
+                    $sql5 = "SELECT m.cena, dl.nazwa_potrawy FROM `menu` as m 
+                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy";//dodać ilość zamówień
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<DISH
+                    <tr>                      
+                      <td>$dish[nazwa_potrawy]</td>
+                      <td>$dish[cena] zł</td>
                     </tr>
-                    
+DISH;
+                    }?>
                     </tbody>
                   </table>
                 </div>
@@ -89,49 +85,45 @@
           <!-- /.col -->         
         </div>
         <!-- /.row -->
-        <div class="row">
-        <div class="col-md-12">
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">Dodaj nowe menu:</h3>
-
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                  <i class="fas fa-minus"></i></button>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Nowa pozycja w menu</h3>
               </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Nazwa dania:</label>
+                    <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = sprintf("SELECT adres, telefon, mail FROM `contact` limit 1",
+                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <input type="text" class="form-control" placeholder="Nazwa dania" value="$user[adres]">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Cena za porcję</label>
+                    <input type="text" class="form-control" placeholder="telefon" value="$user[telefon]">
+                  </div>
+                  <div class="form-group">
+                    <label>Data</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Adres e-mail" value="$user[mail]">
+                  </div>
+                </div>
+USERS;           
+                    }?>                    
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Zaktualizuj stronę kontakt</button>
+                </div>
+              </form>
             </div>
-            <div class="card-body">
-              <div class="form-group">
-                <label for="inputName">Project Name</label>
-                <input type="text" id="inputName" class="form-control" value="AdminLTE">
-              </div>
-              <div class="form-group">
-                <label for="inputDescription">Project Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
-              </div>
-              <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option selected>Success</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inputClientCompany">Client Company</label>
-                <input type="text" id="inputClientCompany" class="form-control" value="Deveint Inc">
-              </div>
-              <div class="form-group">
-                <label for="inputProjectLeader">Project Leader</label>
-                <input type="text" id="inputProjectLeader" class="form-control" value="Tony Chicken">
-              </div>
-            </div>
-            <!-- /.card-body -->
           </div>
-          <!-- /.card -->
-        </div>        
-      </div>
+        </div>
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->

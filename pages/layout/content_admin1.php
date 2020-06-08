@@ -168,16 +168,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="../../pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
+                    <?php
+                    require_once '../../scripts/connect.php';
+                    $sql5 = "SELECT m.cena, dl.nazwa_potrawy FROM `menu` as m 
+                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy";//dodać ilość zamówień
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<DISH
+                    <tr>                      
+                      <td>$dish[nazwa_potrawy]</td>
+                      <td>$dish[cena] zł</td>
                     </tr>
-                    
-                    
+DISH;
+                    }?>
                     </tbody>
                   </table>
                 </div>
