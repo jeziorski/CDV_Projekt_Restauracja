@@ -3,7 +3,7 @@
   if (!empty($_POST['name']) && !empty($_POST['surname'])
   && !empty($_POST['email1'])  && !empty($_POST['email2'])
   && !empty($_POST['pass1'])  && !empty($_POST['pass2'])  
-  && !empty($_POST['birthday']) && !empty($_POST['phone'])) {
+  && !empty($_POST['phone'])) {
     $error=0;
     if (!isset($_POST['terms']))    {
       $_SESSION['error'] = 'Zaznacz zgodę na warunki w regulaminie!';

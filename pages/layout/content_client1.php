@@ -21,6 +21,66 @@
     <section class="content">
       <div class="container-fluid">
       
+      
+                    <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = sprintf("SELECT street_name, street_num, flat_num FROM `user` where email='%s'",
+                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Adres dostawy</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Nazwa ulicy:</label>
+                    <input type="text" class="form-control" placeholder="Nazwa ulicy" value="$user[street_name]">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Numer domu</label>
+                    <input type="text" class="form-control" placeholder="Numer domu" value="$user[street_num]">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Numer lokalu</label>
+                    <input type="text" class="form-control" placeholder="Numer lokalu" value="$user[flat_num]">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                      <div class="form-group">
+                        <div class="custom-control custom-checkbox">
+                          <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1">
+                          <label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>                          
+                        </div>
+                        <input type="text" class="form-control" placeholder="Numer lokalu" value="$user[flat_num]">
+                      </div>
+                      <div class="form-group">                      
+                      
+                      </div>
+                </div>
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Zamów pod ten adres</button>
+            </div>
+            </form>
+            </div>
+          </div>
+        </div>
+USERS;
+          echo<<<DISH
+                    
+                    
+                    
+DISH;          
+
+                    }?>                    
+                
+
       </div><!--/. container-fluid -->
     </section>
     <!-- /.content -->

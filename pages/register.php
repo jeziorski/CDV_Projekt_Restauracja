@@ -143,15 +143,6 @@ CITY;
           </div>
         </div>
 
-        <div class="input-group mb-3">
-          <input type="date" class="form-control" name="birthday" placeholder="Data urodzenia">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-calendar-alt"></span>
-            </div>
-          </div>
-        </div>
-
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
