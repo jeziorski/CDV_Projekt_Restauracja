@@ -27,13 +27,20 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Zrealizowane:</span>
                 <span class="info-box-number">
-                  10
-                  <small>%</small>
+                  <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT COUNT(*) as total FROM `order_list` WHERE status='5'";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    echo<<<DISH
+                    <b>$dish[total]</b>
+DISH;           
+                    }?>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -43,11 +50,21 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">W realizacji:</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-text">W przygotowaniu:</span>
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT COUNT(*) as total FROM `order_list` WHERE status='3'";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    echo<<<DISH
+                    <b>$dish[total]</b>
+DISH;           
+                    }?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -60,10 +77,20 @@
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Anulowane:</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT COUNT(*) as total FROM `order_list` WHERE status='6'";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    echo<<<DISH
+                    <b>$dish[total]</b>
+DISH;           
+                }?>
+                    </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -72,10 +99,20 @@
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-shopping-cart"></i></span>
               <div class="info-box-content">
-                <span class="info-box-text">Oczekujące:</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">W drodze:</span>
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT COUNT(*) as total FROM `order_list` WHERE status='4'";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    echo<<<DISH
+                    <b>$dish[total]</b>
+DISH;           
+                    }?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -86,87 +123,6 @@
         <!-- /.row -->
         <!-- Main row -->
         <div class="row">
-          <!-- Left col -->
-          <div class="col-md-12"> 
-            <!-- TABLE: LATEST ORDERS -->
-            <div class="card">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Ostatnie zamówienia:</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th>ID zamówienia</th>
-                      <th>Wartość zamówienia</th>
-                      <th>Data zamówienia</th>
-                      <th>Status zamówienia</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
-                    INNER JOIN order_status as os ON z.status=os.id_status ";//dodać ilość zamówień
-                    $result = $conn->query($sql5);
-                    while ($dish = $result->fetch_assoc()){
-                    echo<<<ZAM
-                    <tr>                      
-                      <td>$dish[id_zamowienia]</td>
-                      <td>$dish[wartosc_zamowienia] zł</td>
-                      <td>$dish[data_zlozenia]</td>
-ZAM;
-                    switch($dish['nazwa']){
-                      case 'zrealizowane':
-                        echo '<td><span class="badge badge-success">zrealizowane</span></td></tr>';
-                      break;
-                      case 'anulowane':
-                        echo '<td><span class="badge badge-danger">anulowane</span></td></tr>';
-                      break;
-                      case 'w przygotowaniu':
-                        echo '<td><span class="badge badge-warning">w przygotowaniu</span></td></tr>';
-                      break;
-                      case 'oczekujące na zatwierdzenie':
-                        echo '<td><span class="badge badge-secondary">oczekujące na zatwierdzenie</span></td></tr>';
-                      break;
-                      case 'zatwierdzone':
-                        echo '<td><span class="badge badge-secondary">zatwierdzone</span></td></tr>';
-                      break;
-                      case 'w drodze':
-                        echo '<td><span class="badge badge-info">w drodze</span></td></tr>';
-                      break;
-                    }
-                      
-                    
-
-                    }?>
-                    
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.table-responsive -->
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <a href="./admin3.php" class="btn btn-sm btn-info float-left">Odśwież</a>
-              </div>
-              <!-- /.card-footer -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- Dzisiejsze menu -->
-          <!-- /.col -->
           <div class="col-md-12"> 
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
@@ -176,9 +132,6 @@ ZAM;
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
                   </button>
                 </div>
               </div>
@@ -190,13 +143,15 @@ ZAM;
                     <tr>
                       <th>ID_zamówienia</th>
                       <th>Zawartość zamówienia:</th>
+                      <th>Adres</th>
                       <th>Status</th>
+                      <th>Zmień status</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
                     require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
+                    $sql5 = "SELECT z.street_name, z.street_num, z.flat_num, z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
                     INNER JOIN order_status as os ON z.status=os.id_status  WHERE id_status='2' || id_status='3' || id_status='4'";//dodać ilość zamówień
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
@@ -204,6 +159,7 @@ ZAM;
                     <tr>                      
                       <td>$dish[id_zamowienia]</td>
                       <td>$dish[wartosc_zamowienia] zł</td>
+                      <td>$dish[street_name] | $dish[street_num] | $dish[flat_num]</td>
 ZAM;
                     switch($dish['nazwa']){
                       case 'zrealizowane':
@@ -225,10 +181,12 @@ ZAM;
                         echo '<td><span class="badge badge-info">w drodze</span></td>';
                       break;
                     }
-                    echo '<td><a href="#" class="btn btn-sm btn-warning float-left">W przygotowaniu</a>
-                           <a href="#" class="btn btn-sm btn-info float-left">W drodze</a>
-                           <a href="#" class="btn btn-sm btn-success float-left">Zrealizowane</a>
-                           <a href="#" class="btn btn-sm btn-danger float-left">Anuluj</a></td>
+                    echo '                    
+                    <td><a href="#" class="btn btn-sm btn-warning float-left" name="">W przygotowaniu</a>
+                           <a href="#" class="btn btn-sm btn-info float-left" name="">W drodze</a>
+                           <a href="#" class="btn btn-sm btn-success float-left" name="">Zrealizowane</a>
+                           <a href="#" class="btn btn-sm btn-danger float-left" name="">Anuluj</a>
+                    </td>
                     </tr>';//dodać zmiane statusu zamówienia
                       
                     

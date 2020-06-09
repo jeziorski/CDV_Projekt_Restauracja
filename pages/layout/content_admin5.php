@@ -131,6 +131,8 @@ USERS;
                       <th>Uprawnienia</th>
                       <th>Status</th>
                       <th>Ostatnie logowanie</th>
+                      <th>Zmiana statusu</th>
+                      <th>Zmiana uprawnień</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -169,10 +171,31 @@ USERS;
                       break;
                     }
                     if($user['last_login'] == NULL){
-                    echo '<td>Brak logowania</td></tr>';
+                    echo '<td>Brak logowania</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-success float-left" name="">Aktywny</a>
+                        <a href="#" class="btn btn-sm btn-danger float-left" name="">Zablokowany</a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-info float-left" name="">Administrator</a>
+                        <a href="#" class="btn btn-sm btn-warning float-left" name="">Pracownik</a>
+                        <a href="#" class="btn btn-sm btn-secondary float-left" name="">User</a>
+                    </td>
+                    
+                    </tr>';
                     }else{
                     echo <<<USERS
-                    <td>$user[last_login]</td></tr>
+                    <td>$user[last_login]</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-success float-left" name="">Aktywny</a>
+                        <a href="#" class="btn btn-sm btn-danger float-left" name="">Zablokowany</a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-info float-left" name="">Administrator</a>
+                        <a href="#" class="btn btn-sm btn-warning float-left" name="">Pracownik</a>
+                        <a href="#" class="btn btn-sm btn-secondary float-left" name="">User</a>
+                    </td>
+                    </tr>
 USERS;                   
                     }
                     

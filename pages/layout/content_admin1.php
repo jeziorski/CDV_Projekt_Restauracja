@@ -27,10 +27,18 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Ilość odwiedzin:</span>
+                <span class="info-box-text">Zrealizowane zamówienia od początku</span>
                 <span class="info-box-number">
-                  10
-                  <small>%</small>
+                  <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT COUNT(*) as total FROM `order_list` WHERE status='5'";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    if($dish['total']== NULL){$dish['total']='0';}
+                    echo<<<DISH
+                    <b>$dish[total]</b>
+DISH;           
+                    }?>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -44,7 +52,17 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Dzisiejsze zamówienia:</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT COUNT(*) as total FROM `order_list` WHERE DATE(data_zlozenia)=CURDATE() ";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    echo<<<DISH
+                    <b>$dish[total]</b>
+DISH;           
+                    }?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -60,7 +78,18 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Dzisiejsza wartość zamówień:</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT SUM(wartosc_zamowienia) as total FROM `order_list` WHERE DATE(data_zlozenia)=CURDATE() AND status='5'";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    if($dish['total']== NULL){$dish['total']='0';}
+                    echo<<<DISH
+                    <b>$dish[total] zł</b>
+DISH;           
+                    }?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -72,7 +101,17 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Wartość zamówień od początku:</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-number">
+                <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = "SELECT SUM(wartosc_zamowienia) as total FROM `order_list` WHERE status='5'";
+                    $result1 = $conn->query($sql1);
+                    while ($dish = $result1->fetch_assoc()){
+                    echo<<<DISH
+                    <b>$dish[total] zł</b>
+DISH;           
+                    }?>
+                </span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -166,6 +205,8 @@ ZAM;
             </div>
             <!-- /.card -->
           </div>
+          
+          
           <!-- Dzisiejsze menu -->
           <!-- /.col -->
           <div class="col-md-12"> 

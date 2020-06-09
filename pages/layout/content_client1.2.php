@@ -28,7 +28,7 @@
                     $sql5 = "SELECT m.id_potrawy, m.cena, dl.nazwa_potrawy, dl.opis_potrawy, e.opis_etykiety FROM `menu` as m 
                     INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy
                     INNER JOIN etykiety as e ON e.id_etykiety=m.id_etykiety
-                    WHERE m.data=CURDATE()";//zamówienia z dzisiaj
+                    WHERE m.data_obowiazywania=CURDATE()";//zamówienia z dzisiaj
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
                     echo<<<DISH
