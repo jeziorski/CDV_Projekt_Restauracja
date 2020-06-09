@@ -21,7 +21,7 @@
     <section class="content">
       <div class="container-fluid">
       
-          <form>
+          <form action="../../scripts/add_order_dish.php" method="POST">
       
                     <?php
                     require_once '../../scripts/connect.php';

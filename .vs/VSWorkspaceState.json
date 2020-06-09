@@ -3,8 +3,9 @@
     "",
     "\\pages",
     "\\pages\\layout",
-    "\\pages\\logged"
+    "\\pages\\logged",
+    "\\scripts"
   ],
-  "SelectedNode": "\\contact.php",
+  "SelectedNode": "\\cover.css",
   "PreviewInSolutionExplorer": false
 }

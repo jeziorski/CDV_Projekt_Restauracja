@@ -115,14 +115,42 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="../../pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                    </tr>
+                    <?php
+                    require_once '../../scripts/connect.php';
+                    $sql5 = "SELECT z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
+                    INNER JOIN order_status as os ON z.status=os.id_status ";//dodać ilość zamówień
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<ZAM
+                    <tr>                      
+                      <td>$dish[id_zamowienia]</td>
+                      <td>$dish[wartosc_zamowienia] zł</td>
+                      <td>$dish[data_zlozenia]</td>
+ZAM;
+                    switch($dish['nazwa']){
+                      case 'zrealizowane':
+                        echo '<td><span class="badge badge-success">zrealizowane</span></td></tr>';
+                      break;
+                      case 'anulowane':
+                        echo '<td><span class="badge badge-danger">anulowane</span></td></tr>';
+                      break;
+                      case 'w przygotowaniu':
+                        echo '<td><span class="badge badge-warning">w przygotowaniu</span></td></tr>';
+                      break;
+                      case 'oczekujące na zatwierdzenie':
+                        echo '<td><span class="badge badge-secondary">oczekujące na zatwierdzenie</span></td></tr>';
+                      break;
+                      case 'zatwierdzone':
+                        echo '<td><span class="badge badge-secondary">zatwierdzone</span></td></tr>';
+                      break;
+                      case 'w drodze':
+                        echo '<td><span class="badge badge-info">w drodze</span></td></tr>';
+                      break;
+                    }
+                      
+                    
+
+                    }?>
                     
                     </tbody>
                   </table>
@@ -131,8 +159,8 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Odśwież</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">Zobacz wszystkie zamówienia</a>
+                <a href="./admin.php" class="btn btn-sm btn-info float-left">Odśwież</a>
+                <a href="./admin3.php" class="btn btn-sm btn-secondary float-right">Zobacz pełną historię</a>
               </div>
               <!-- /.card-footer -->
             </div>
@@ -163,21 +191,22 @@
                     <tr>
                       <th>Nazwa dania</th>
                       <th>Cena za porcję</th>
+                      <th>Data obowiązywania</th>
                       <th>Ilość zamówień</th>
-                      <th>Wartość zamówień</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
                     require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT m.cena, dl.nazwa_potrawy FROM `menu` as m 
-                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy";//dodać ilość zamówień
+                    $sql5 = "SELECT m.cena, dl.nazwa_potrawy, m.data_obowiazywania FROM `menu` as m 
+                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy WHERE m.data_obowiazywania=CURDATE()";//dodać ilość zamówień
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
                     echo<<<DISH
                     <tr>                      
                       <td>$dish[nazwa_potrawy]</td>
                       <td>$dish[cena] zł</td>
+                      <td>$dish[data_obowiazywania]</td>
                     </tr>
 DISH;
                     }?>
@@ -188,7 +217,8 @@ DISH;
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Odśwież</a>
+                <a href="./admin.php" class="btn btn-sm btn-info float-left">Odśwież</a>
+                <a href="./admin2.php" class="btn btn-sm btn-secondary float-right">Edytuj dzisiejsze menu</a>
               </div>
               <!-- /.card-footer -->
             </div>
