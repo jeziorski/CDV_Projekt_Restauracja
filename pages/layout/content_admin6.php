@@ -28,7 +28,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form">
+              <form role="form" action="../../scripts/change_contact.php" method="POST">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Pełny adres</label>

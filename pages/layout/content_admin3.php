@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-check-circle"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Zrealizowane:</span>
@@ -50,7 +50,7 @@ DISH;
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-circle-notch"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">W przygotowaniu:</span>
@@ -77,7 +77,7 @@ DISH;
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-minus-circle"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Anulowane:</span>
                 <span class="info-box-number">
@@ -99,7 +99,7 @@ DISH;
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-truck"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">W drodze:</span>
                 <span class="info-box-number">

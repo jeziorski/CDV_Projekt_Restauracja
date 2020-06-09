@@ -37,9 +37,6 @@
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -75,7 +72,7 @@ DISH;
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Odśwież</a>
+                <a href="./admin2.php" class="btn btn-sm btn-info float-left">Odśwież</a>
               </div>
               <!-- /.card-footer -->
             </div>
@@ -92,7 +89,7 @@ DISH;
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form">
+              <form role="form" action="../../scripts/add_dish.php" method="POST">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="">Nazwa dania:</label>
@@ -129,7 +126,7 @@ USERS;
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form">
+              <form role="form" action="../../scripts/add_dish_menu.php" method="POST">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="">Nazwa dania:</label>

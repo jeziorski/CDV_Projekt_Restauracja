@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-smile"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Zrealizowane:</span>
@@ -49,7 +49,7 @@ DISH;
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-frown"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Anulowane:</span>
                 <span class="info-box-number">
