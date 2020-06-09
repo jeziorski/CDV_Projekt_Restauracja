@@ -199,7 +199,7 @@ ZAM;
               <!-- /.card-body -->
               <div class="card-footer clearfix">
                 <a href="./admin.php" class="btn btn-sm btn-info float-left">Odśwież</a>
-                <a href="./admin3.php" class="btn btn-sm btn-secondary float-right">Zobacz pełną historię</a>
+                <a href="./admin3.php" class="btn btn-sm btn-secondary float-right">Zobacz aktualne zamówienia</a>
               </div>
               <!-- /.card-footer -->
             </div>

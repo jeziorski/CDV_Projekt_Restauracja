@@ -101,7 +101,73 @@ USERS;
         <!-- /.row -->
 
         
-
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+            <form action="../../scripts/change_status_permission.php" method="POST">
+              <table class="table m-0">
+                  <thead>
+                    <tr>
+                      <th>Mail użytkownika</th>
+                      <th>Uprawnienia</th>
+                      <th>Status</th>                      
+                      <th>Zatwierdź</th>                      
+                    </tr>
+                  </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <select class="form-control">
+                        <?php
+                        require_once '../../scripts/connect.php';
+                        $sql = "SELECT email FROM user";
+                        $result = $conn->query($sql);
+                        while ($user = $result->fetch_assoc()){
+                        echo<<<CITY
+                        <option value="$user[id]">$user[email]</option>
+CITY;
+                        }              
+                        ?>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                        <?php
+                        require_once '../../scripts/connect.php';
+                        $sql = "SELECT * FROM permission";
+                        $result = $conn->query($sql);
+                        while ($perm = $result->fetch_assoc()){
+                        echo<<<CITY
+                        <option value="$perm[id]">$perm[permission]</option>
+CITY;
+                        }              
+                        ?>
+                        </select>
+                    </td>                    
+                    <td>
+                        <select class="form-control">
+                        <?php
+                        require_once '../../scripts/connect.php';
+                        $sql = "SELECT * FROM status";
+                        $result = $conn->query($sql);
+                        while ($st = $result->fetch_assoc()){
+                        echo<<<CITY
+                        <option value="$st[id]">$st[status]</option>
+CITY;
+                        }              
+                        ?>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" class="btn btn-sm btn-warning float-center" value="Zatwierdź zmiany">                     
+                    </td>   
+                  </tr>
+                </tbody>
+              </table>
+              </form>
+            </div>
+          </div>
+        </div>
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
@@ -131,8 +197,6 @@ USERS;
                       <th>Uprawnienia</th>
                       <th>Status</th>
                       <th>Ostatnie logowanie</th>
-                      <th>Zmiana statusu</th>
-                      <th>Zmiana uprawnień</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -144,7 +208,7 @@ USERS;
                     $result = $conn->query($sql5);
                     while ($user = $result->fetch_assoc()){
                     echo<<<USERS
-                    <tr>
+                    <tr>                      
                       <td>$user[id]</td>
                       <td>$user[email]</td>
 USERS;
@@ -172,30 +236,10 @@ USERS;
                     }
                     if($user['last_login'] == NULL){
                     echo '<td>Brak logowania</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-success float-left" name="">Aktywny</a>
-                        <a href="#" class="btn btn-sm btn-danger float-left" name="">Zablokowany</a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-info float-left" name="">Administrator</a>
-                        <a href="#" class="btn btn-sm btn-warning float-left" name="">Pracownik</a>
-                        <a href="#" class="btn btn-sm btn-secondary float-left" name="">User</a>
-                    </td>
-                    
-                    </tr>';
+                    ';
                     }else{
                     echo <<<USERS
                     <td>$user[last_login]</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-success float-left" name="">Aktywny</a>
-                        <a href="#" class="btn btn-sm btn-danger float-left" name="">Zablokowany</a>
-                    </td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-info float-left" name="">Administrator</a>
-                        <a href="#" class="btn btn-sm btn-warning float-left" name="">Pracownik</a>
-                        <a href="#" class="btn btn-sm btn-secondary float-left" name="">User</a>
-                    </td>
-                    </tr>
 USERS;                   
                     }
                     

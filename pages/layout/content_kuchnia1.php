@@ -19,7 +19,6 @@
 
     <!-- Main content -->
     <section class="content">
-      <section class="content">
       <div class="container-fluid">
         
 
@@ -122,6 +121,58 @@ DISH;
           <!-- /.col -->
         </div>
         <!-- /.row -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+            <form action="../../scripts/change_order_status.php" method="POST">
+              <table class="table m-0">
+                  <thead>
+                    <tr>
+                      <th>ID zamówienia</th>
+                      <th>Status</th>                      
+                      <th>Zatwierdź</th>                      
+                    </tr>
+                  </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <select class="form-control">
+                        <?php
+                        require_once '../../scripts/connect.php';
+                        $sql = "SELECT * FROM order_list WHERE status ='2' OR status ='3' OR status ='4'";
+                        $result = $conn->query($sql);
+                        while ($user = $result->fetch_assoc()){
+                        echo<<<CITY
+                        <option value="$user[id_zamowienia]">$user[id_zamowienia]</option>
+CITY;
+                        }              
+                        ?>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                        <?php
+                        require_once '../../scripts/connect.php';
+                        $sql = "SELECT * FROM order_status WHERE id_status ='3' OR id_status ='4' OR id_status ='5' OR id_status ='6'";
+                        $result = $conn->query($sql);
+                        while ($perm = $result->fetch_assoc()){
+                        echo<<<CITY
+                        <option value="$perm[id_status]">$perm[nazwa]</option>
+CITY;
+                        }              
+                        ?>
+                        </select>
+                    </td> 
+                    <td>
+                        <input type="submit" class="btn btn-sm btn-warning float-center" value="Zatwierdź zmiany">                     
+                    </td>   
+                  </tr>
+                </tbody>
+              </table>
+              </form>
+            </div>
+          </div>
+        </div>
         <!-- Main row -->
         <div class="row">
           <div class="col-md-12"> 
@@ -146,7 +197,6 @@ DISH;
                       <th>Zawartość zamówienia:</th>
                       <th>Adres</th>
                       <th>Status</th>
-                      <th>Zmień status</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -182,13 +232,7 @@ ZAM;
                         echo '<td><span class="badge badge-info">w drodze</span></td>';
                       break;
                     }
-                    echo '                    
-                    <td><a href="#" class="btn btn-sm btn-warning float-left" name="">W przygotowaniu</a>
-                           <a href="#" class="btn btn-sm btn-info float-left" name="">W drodze</a>
-                           <a href="#" class="btn btn-sm btn-success float-left" name="">Zrealizowane</a>
-                           <a href="#" class="btn btn-sm btn-danger float-left" name="">Anuluj</a>
-                    </td>
-                    </tr>';//dodać zmiane statusu zamówienia
+                    echo '</tr>';//dodać zmiane statusu zamówienia
                       
                     
 
@@ -214,7 +258,6 @@ ZAM;
         </div>
         <!-- /.row -->
       </div><!--/. container-fluid -->
-    </section>
     </section>
     <!-- /.content -->
   </div>
