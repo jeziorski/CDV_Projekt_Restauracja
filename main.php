@@ -58,46 +58,10 @@
     <section class="content">
       <div class="container-fluid">
         <main role="main" class="inner cover">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper">
-                  <div class="ribbon bg-primary">
-                    Ribbon
-                  </div>
-                </div>
-                Ribbon Default <br />
-                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-              </div>
-            </div>
-          </div>
-          </br>
-          <div class="row">
-            <div class="col-sm-6">
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper">
-                  <div class="ribbon bg-primary">
-                    Ribbon
-                  </div>
-                </div>
-                Ribbon Default <br />
-                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-              </div>
-            </div>
+          
+          
 
-            <div class="col-sm-6">
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper">
-                  <div class="ribbon bg-primary">
-                    Ribbon
-                  </div>
-                </div>
-                Ribbon Default <br />
-                <small>.ribbon-wrapper.ribbon-lg .ribbon</small>
-              </div>
-            </div>
-          </div>
-          </br>
+            
         </main>
       </div>
     </section>

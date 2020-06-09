@@ -86,7 +86,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Dzisiejsze menu:</h3>
+                <h3 class="card-title">Moje zamówienia</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -103,21 +103,50 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Nazwa dania</th>
-                      <th>Cena za porcję</th>
-                      <th>Ilość zamówień</th>
-                      <th>Wartość zamówień</th>
+                      <th>ID zamówienia</th>
+                      <th>Wartość zamówienia</th>
+                      <th>Data złożenia</th>
+                      <th>Status zamówienia</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="../../pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                      </td>
-                    </tr>
+                    <?php
+                    require_once '../../scripts/connect.php';
+                    $sql5 = sprintf("SELECT z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
+                    INNER JOIN order_status as os ON z.status=os.id_status WHERE z.id_uzytkownika='%s'",
+                    mysqli_real_escape_string($conn, $_SESSION['logged']['user_id'])) ;//dodać ilość zamówień
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<ZAM
+                    <tr>                      
+                      <td>$dish[id_zamowienia]</td>
+                      <td>$dish[wartosc_zamowienia] zł</td>
+                      <td>$dish[data_zlozenia]</td>
+ZAM;
+                    switch($dish['nazwa']){
+                      case 'zrealizowane':
+                        echo '<td><span class="badge badge-success">zrealizowane</span></td></tr>';
+                      break;
+                      case 'anulowane':
+                        echo '<td><span class="badge badge-danger">anulowane</span></td></tr>';
+                      break;
+                      case 'w przygotowaniu':
+                        echo '<td><span class="badge badge-warning">w przygotowaniu</span></td></tr>';
+                      break;
+                      case 'oczekujące na zatwierdzenie':
+                        echo '<td><span class="badge badge-secondary">oczekujące na zatwierdzenie</span></td></tr>';
+                      break;
+                      case 'zatwierdzone':
+                        echo '<td><span class="badge badge-secondary">zatwierdzone</span></td></tr>';
+                      break;
+                      case 'w drodze':
+                        echo '<td><span class="badge badge-info">w drodze</span></td></tr>';
+                      break;
+                    }
+                      
+                    
+
+                    }?>
                     </tbody>
                   </table>
                 </div>

@@ -159,7 +159,7 @@ DISH;
                     <tr>                      
                       <td>$dish[id_zamowienia]</td>
                       <td>$dish[wartosc_zamowienia] zł</td>
-                      <td>$dish[street_name] | $dish[street_num] | $dish[flat_num]</td>
+                      <td>$dish[street_name]  $dish[street_num] / $dish[flat_num]</td>
 ZAM;
                     switch($dish['nazwa']){
                       case 'zrealizowane':

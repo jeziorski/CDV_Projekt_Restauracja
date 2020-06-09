@@ -76,7 +76,6 @@ DISH;
               <!-- /.card-body -->
               <div class="card-footer clearfix">
                 <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Odśwież</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">Zobacz całe menu</a>
               </div>
               <!-- /.card-footer -->
             </div>
@@ -96,7 +95,7 @@ DISH;
               <form role="form">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Nazwa dania:</label>
+                    <label for="">Nazwa dania:</label>
                     <?php 
                     require_once '../../scripts/connect.php';
                     $sql1 = sprintf("SELECT adres, telefon, mail FROM `contact` limit 1",
@@ -104,21 +103,58 @@ DISH;
                     $result1 = $conn->query($sql1);
                     while ($user = $result1->fetch_assoc()){
                     echo<<<USERS
-                    <input type="text" class="form-control" placeholder="Nazwa dania" value="$user[adres]">
+                    <select class="form-control" placeholder="Nazwa dania" value=""></select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Cena za porcję</label>
-                    <input type="text" class="form-control" placeholder="telefon" value="$user[telefon]">
+                    <input type="text" class="form-control" placeholder="Cena za porcję" value="">
                   </div>
                   <div class="form-group">
-                    <label>Data</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Adres e-mail" value="$user[mail]">
+                    <label>Data obowiązywania</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Data obowiązywania" value="">
                   </div>
                 </div>
 USERS;           
                     }?>                    
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Zaktualizuj stronę kontakt</button>
+                  <button type="submit" class="btn btn-primary">Dodaj danie do spisu</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Nowa danie w liście dań</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="">Nazwa dania:</label>
+                    <?php 
+                    require_once '../../scripts/connect.php';
+                    $sql1 = sprintf("SELECT adres, telefon, mail FROM `contact` limit 1",
+                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
+                    $result1 = $conn->query($sql1);
+                    while ($user = $result1->fetch_assoc()){
+                    echo<<<USERS
+                    <input type="text" class="form-control" placeholder="Nazwa dania" value="">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Cena za porcję</label>
+                    <input type="text" class="form-control" placeholder="Cena za porcję" value="">
+                  </div>
+                  <div class="form-group">
+                    <label>Data obowiązywania</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Data obowiązywania" value="">
+                  </div>
+                </div>
+USERS;           
+                    }?>                    
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Dodaj</button>
                 </div>
               </form>
             </div>
