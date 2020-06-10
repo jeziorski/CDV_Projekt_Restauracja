@@ -635,6 +635,10 @@ pre code {
   padding-left: 15px;
 
 }
+.contact_info {
+    position: absolute;
+    padding-bottom:30px;
+}
 
 .col {
   -ms-flex-preferred-size: 0;
