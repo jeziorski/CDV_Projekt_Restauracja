@@ -633,6 +633,7 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+
 }
 
 .col {
@@ -1150,6 +1151,7 @@ pre code {
     -ms-flex: 0 0 41.666667%;
     flex: 0 0 41.666667%;
     max-width: 41.666667%;
+    margin-top:70px;
   }
   .col-md-6 {
     -ms-flex: 0 0 50%;
@@ -2059,6 +2061,11 @@ pre code {
   background-color: transparent;
   border: 0;
 }
+
+.test {
+  border-radius: 25px 25px 25px 25px;
+}
+
 
 .form-control:-moz-focusring {
   color: transparent;
@@ -10159,6 +10166,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-muted {
   color: #6c757d !important;
+  padding-bottom: 100px;
 }
 
 .text-black-50 {
