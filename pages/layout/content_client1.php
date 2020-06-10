@@ -19,18 +19,41 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
+      <?php
+        
+        ?>
       
-      
-                    <?php 
+     
+        <?php
                     require_once '../../scripts/connect.php';
                     $sql1 = sprintf("SELECT street_name, street_num, flat_num FROM `user` where email='%s'",
                     mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
                     $result1 = $conn->query($sql1);
                     while ($user = $result1->fetch_assoc()){
-                    echo<<<USERS
+                    
+                    if (isset($_SESSION['error'])) {
+                    echo<<<ERROR
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="alert alert-danger alert-dismissible">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                          <h5><i class="icon fas fa-ban"></i>Błąd!</h5>
+                          {$_SESSION['error']}
+                          </div>
+                      </div>
+                    </div>
+ERROR;
+        unset($_SESSION['error']);
+        }
+        echo<<<USERS
         <div class="row">
           <div class="col-md-6">
+          <div class="container-fluid">
+      <div class="alert alert-warning alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h5><i class="icon fas fa-exclamation-triangle"></i> Uwaga!</h5>
+       Restauracja prowadzi dostawy tylko na terenie miasta Poznania! Zamówienia poza Poznań bedą anulowane.
+      </div>
             <div class="card card-secondary">
               <div class="card-header">
                 <h3 class="card-title">Adres dostawy</h3>
@@ -64,12 +87,7 @@
             </div>
           </div>
         </div>
-USERS;
-          echo<<<DISH
-                    
-                    
-                    
-DISH;          
+USERS;          
 
                     }?>                    
                 

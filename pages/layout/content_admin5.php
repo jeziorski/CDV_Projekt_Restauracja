@@ -100,7 +100,29 @@ USERS;
         </div>
         <!-- /.row -->
 
-        
+        <?php
+        if (isset($_SESSION['error'])) {
+        echo<<<ERROR
+          <div class="alert alert-danger alert-dismissible">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+             <h5><i class="icon fas fa-ban"></i>Błąd!</h5>
+             {$_SESSION['error']}
+          </div>
+ERROR;
+        unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success'])){
+        echo<<<SUCCESS
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-check"></i> Sukces!</h5>
+          {$_SESSION['success']}
+        </div>
+SUCCESS;
+        unset($_SESSION['success']);
+        }
+        ?>
+
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -117,10 +139,12 @@ USERS;
                 <tbody>
                   <tr>
                     <td>
-                        <select class="form-control">
+                        <select class="form-control" name="email">
+                        <option></option>
                         <?php
                         require_once '../../scripts/connect.php';
-                        $sql = "SELECT email FROM user";
+                        $sql = sprintf("SELECT * FROM user WHERE email NOT LIKE '%s'",
+                        mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
                         $result = $conn->query($sql);
                         while ($user = $result->fetch_assoc()){
                         echo<<<CITY
@@ -131,7 +155,8 @@ CITY;
                         </select>
                     </td>
                     <td>
-                        <select class="form-control">
+                        <select class="form-control" name="permission">
+                        <option></option>
                         <?php
                         require_once '../../scripts/connect.php';
                         $sql = "SELECT * FROM permission";
@@ -145,7 +170,8 @@ CITY;
                         </select>
                     </td>                    
                     <td>
-                        <select class="form-control">
+                        <select class="form-control" name="status">
+                        <option></option>
                         <?php
                         require_once '../../scripts/connect.php';
                         $sql = "SELECT * FROM status";

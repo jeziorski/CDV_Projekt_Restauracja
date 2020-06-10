@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Panel Administracyjny</h1>
+            <h1 class="m-0 text-dark">Administrator - Zamówienia</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-cog"></i></span>
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-check-circle"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Zrealizowane:</span>
@@ -50,7 +50,7 @@ DISH;
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-circle-notch"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">W przygotowaniu:</span>
@@ -77,7 +77,7 @@ DISH;
 
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-minus-circle"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">Anulowane:</span>
                 <span class="info-box-number">
@@ -99,7 +99,7 @@ DISH;
           <!-- /.col -->
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-shopping-cart"></i></span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-truck"></i></span>
               <div class="info-box-content">
                 <span class="info-box-text">W drodze:</span>
                 <span class="info-box-number">
@@ -120,7 +120,28 @@ DISH;
           </div>
           <!-- /.col -->
         </div>
-        <!-- /.row -->
+        <?php
+        if (isset($_SESSION['error'])) {
+        echo<<<ERROR
+          <div class="alert alert-danger alert-dismissible">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+             <h5><i class="icon fas fa-ban"></i>Błąd!</h5>
+             {$_SESSION['error']}
+          </div>
+ERROR;
+        unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success'])){
+        echo<<<SUCCESS
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-check"></i> Sukces!</h5>
+          {$_SESSION['success']}
+        </div>
+SUCCESS;
+        unset($_SESSION['success']);
+        }
+        ?>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -136,7 +157,8 @@ DISH;
                 <tbody>
                   <tr>
                     <td>
-                        <select class="form-control">
+                        <select class="form-control" name="zamowienie">
+                        <option></option>
                         <?php
                         require_once '../../scripts/connect.php';
                         $sql = "SELECT * FROM order_list WHERE status ='2' OR status ='3' OR status ='4'";
@@ -150,7 +172,8 @@ CITY;
                         </select>
                     </td>
                     <td>
-                        <select class="form-control">
+                        <select class="form-control" name="status">
+                        <option></option>
                         <?php
                         require_once '../../scripts/connect.php';
                         $sql = "SELECT * FROM order_status WHERE id_status ='3' OR id_status ='4' OR id_status ='5' OR id_status ='6'";

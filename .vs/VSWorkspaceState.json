@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\pages",
+    "\\pages\\layout",
+    "\\scripts"
   ],
-  "SelectedNode": "\\contact.php",
+  "SelectedNode": "\\pages\\layout\\content_client2.php",
   "PreviewInSolutionExplorer": false
 }
