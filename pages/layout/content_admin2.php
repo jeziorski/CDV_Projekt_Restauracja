@@ -81,6 +81,32 @@ DISH;
           <!-- /.col -->         
         </div>
         <!-- /.row -->
+
+
+        <!-- Sukces lub error -->
+      <?php
+        if (isset($_SESSION['error'])) {
+        echo<<<ERROR
+          <div class="alert alert-danger alert-dismissible">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+             <h5><i class="icon fas fa-ban"></i>Błąd wysyłania formularza!</h5>
+             {$_SESSION['error']}
+          </div>
+ERROR;
+        unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success'])){
+        echo<<<SUCCESS
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-check"></i> Sukces!</h5>
+          {$_SESSION['success']}
+        </div>
+SUCCESS;
+        unset($_SESSION['success']);
+        }
+      ?>
+
       <div class="row">
           <div class="col-md-6">
             <div class="card card-secondary">
