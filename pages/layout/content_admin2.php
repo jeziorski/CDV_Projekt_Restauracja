@@ -85,7 +85,7 @@ DISH;
           <div class="col-md-6">
             <div class="card card-secondary">
               <div class="card-header">
-                <h3 class="card-title">Nowa pozycja w menu</h3>
+                <h3 class="card-title">Nowa pozycja w liście dań</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -100,15 +100,11 @@ DISH;
                     $result1 = $conn->query($sql1);
                     while ($user = $result1->fetch_assoc()){
                     echo<<<USERS
-                    <select class="form-control" placeholder="Nazwa dania" value=""></select>
+                    <input type="text" class="form-control" placeholder="Nazwa dania" value="" name="nazwa_potrawy">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Cena za porcję</label>
-                    <input type="text" class="form-control" placeholder="Cena za porcję" value="">
-                  </div>
-                  <div class="form-group">
-                    <label>Data obowiązywania</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Data obowiązywania" value="">
+                    <label for="">Opis dania</label>
+                    <input type="text-area" class="form-control" placeholder="Opis dania" name="opis_potrawy">
                   </div>
                 </div>
 USERS;           
@@ -122,7 +118,7 @@ USERS;
           <div class="col-md-6">
             <div class="card card-secondary">
               <div class="card-header">
-                <h3 class="card-title">Nowa danie w liście dań</h3>
+                <h3 class="card-title">Menu</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -137,15 +133,19 @@ USERS;
                     $result1 = $conn->query($sql1);
                     while ($user = $result1->fetch_assoc()){
                     echo<<<USERS
-                    <input type="text" class="form-control" placeholder="Nazwa dania" value="">
+                    <select class="form-control"></select>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Cena za porcję</label>
                     <input type="text" class="form-control" placeholder="Cena za porcję" value="">
                   </div>
                   <div class="form-group">
+                    <label>Etykieta</label>
+                    <select class="form-control"></select>
+                  </div>
+                  <div class="form-group">
                     <label>Data obowiązywania</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Data obowiązywania" value="">
+                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Data obowiązywania" value="" name="data_obowiazywania">
                   </div>
                 </div>
 USERS;           
