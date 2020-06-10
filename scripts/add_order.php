@@ -22,7 +22,8 @@ session_start();
                 exit();
               }
            }else{
-           echo 'wypełnij wszystkie dane lub wybierz odbiór własny';
+           $_SESSION['error'] = 'wypełnij wszystkie dane lub wybierz odbiór własny';
+           header('location: ../pages/logged/client.php');
            }
         }else{
            require_once './connect.php';
