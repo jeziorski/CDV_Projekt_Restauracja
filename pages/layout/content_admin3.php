@@ -120,7 +120,28 @@ DISH;
           </div>
           <!-- /.col -->
         </div>
-        <!-- /.row -->
+        <?php
+        if (isset($_SESSION['error'])) {
+        echo<<<ERROR
+          <div class="alert alert-danger alert-dismissible">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+             <h5><i class="icon fas fa-ban"></i>Błąd!</h5>
+             {$_SESSION['error']}
+          </div>
+ERROR;
+        unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success'])){
+        echo<<<SUCCESS
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-check"></i> Sukces!</h5>
+          {$_SESSION['success']}
+        </div>
+SUCCESS;
+        unset($_SESSION['success']);
+        }
+        ?>
         <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -136,7 +157,8 @@ DISH;
                 <tbody>
                   <tr>
                     <td>
-                        <select class="form-control">
+                        <select class="form-control" name="zamowienie">
+                        <option></option>
                         <?php
                         require_once '../../scripts/connect.php';
                         $sql = "SELECT * FROM order_list WHERE status ='2' OR status ='3' OR status ='4'";
@@ -150,7 +172,8 @@ CITY;
                         </select>
                     </td>
                     <td>
-                        <select class="form-control">
+                        <select class="form-control" name="status">
+                        <option></option>
                         <?php
                         require_once '../../scripts/connect.php';
                         $sql = "SELECT * FROM order_status WHERE id_status ='3' OR id_status ='4' OR id_status ='5' OR id_status ='6'";

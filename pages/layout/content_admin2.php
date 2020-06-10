@@ -31,7 +31,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent  bg-secondary">
-                <h3 class="card-title">Dzisiejsze menu:</h3>
+                <h3 class="card-title">Historia menu:</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -47,6 +47,7 @@
                     <tr>
                       <th>Nazwa dania</th>
                       <th>Cena za porcję</th>
+                      <th>Data obowiązywania</th>
                       <th>Ilość zamówień</th>
                       <th>Wartość zamówień</th>
                     </tr>
@@ -54,7 +55,7 @@
                     <tbody>
                     <?php
                     require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT m.cena, dl.nazwa_potrawy FROM `menu` as m 
+                    $sql5 = "SELECT m.data_obowiazywania, m.cena, dl.nazwa_potrawy FROM `menu` as m 
                     INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy";//dodać ilość zamówień
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
@@ -62,6 +63,9 @@
                     <tr>                      
                       <td>$dish[nazwa_potrawy]</td>
                       <td>$dish[cena] zł</td>
+                      <td>$dish[data_obowiazywania]</td>
+                      <td></td>
+                      <td></td>
                     </tr>
 DISH;
                     }?>
