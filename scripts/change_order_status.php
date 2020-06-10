@@ -5,11 +5,9 @@ session_start();
     require_once './connect.php';
     $zamowienie = $_POST['zamowienie'];
     $status = $_POST['status'];
-    //do poprawy
-    $sql2 = sprintf("UPDATE order_list SET status = CURRENT_TIMESTAMP() WHERE email='%s'",
-            mysqli_real_escape_string($conn, $email)); 
-            $conn->query($sql2);
-    //do poprawy
+    $sql = "UPDATE `order_list` SET `status`= ?, data_aktualizacji=CURRENT_TIMESTAMP() WHERE `id_zamowienia`=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ii", $status,$zamowienie);
     if($stmt->execute()){
     $_SESSION['success'] = "Zmieniono status zamówienia";
       header('location: ../pages/logged/admin3.php');
