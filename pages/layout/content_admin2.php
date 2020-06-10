@@ -118,23 +118,14 @@ SUCCESS;
               <form role="form" action="../../scripts/add_dish.php" method="POST">
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="">Nazwa dania:</label>
-                    <?php 
-                    require_once '../../scripts/connect.php';
-                    $sql1 = sprintf("SELECT adres, telefon, mail FROM `contact` limit 1",
-                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
-                    $result1 = $conn->query($sql1);
-                    while ($user = $result1->fetch_assoc()){
-                    echo<<<USERS
+                    <label for="">Nazwa dania:</label>                    
                     <input type="text" class="form-control" placeholder="Nazwa dania" value="" name="nazwa_potrawy">
                   </div>
                   <div class="form-group">
                     <label for="">Opis dania</label>
                     <input type="text-area" class="form-control" placeholder="Opis dania" name="opis_potrawy">
                   </div>
-                </div>
-USERS;           
-                    }?>                    
+                </div>                    
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Dodaj danie do spisu</button>
                 </div>
@@ -152,32 +143,47 @@ USERS;
                 <div class="card-body">
                   <div class="form-group">
                     <label for="">Nazwa dania:</label>
-                    <?php 
-                    require_once '../../scripts/connect.php';
-                    $sql1 = sprintf("SELECT adres, telefon, mail FROM `contact` limit 1",
-                    mysqli_real_escape_string($conn, $_SESSION['logged']['email']));
-                    $result1 = $conn->query($sql1);
-                    while ($user = $result1->fetch_assoc()){
-                    echo<<<USERS
-                    <select class="form-control"></select>
+                    <select class="form-control" name="nazwa_potrawy">
+                    <option></option>
+                    <?php
+                        require_once '../../scripts/connect.php';
+                        $sql = "SELECT * FROM dish_list";
+                        $result = $conn->query($sql);
+                        while ($dish = $result->fetch_assoc()){
+                        echo<<<CITY
+                        <option value="$dish[id_potrawy]">$dish[nazwa_potrawy]</option>
+CITY;
+                        }              
+                        ?>
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Cena za porcję</label>
-                    <input type="text" class="form-control" placeholder="Cena za porcję" value="">
+                    <label for="">Cena za porcję</label>
+                    <input type="number" class="form-control" placeholder="Cena za porcję" min="0" name="cena">
                   </div>
                   <div class="form-group">
                     <label>Etykieta</label>
-                    <select class="form-control"></select>
+                    <select class="form-control" name="etykieta">
+                    <option></option>
+                    <?php
+                        require_once '../../scripts/connect.php';
+                        $sql = "SELECT * FROM etykiety";
+                        $result = $conn->query($sql);
+                        while ($ety = $result->fetch_assoc()){
+                        echo<<<CITY
+                        <option value="$ety[id_etykiety]">$ety[opis_etykiety]</option>
+CITY;
+                        }              
+                        ?>
+                    </select>
                   </div>
                   <div class="form-group">
                     <label>Data obowiązywania</label>
-                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Data obowiązywania" value="" name="data_obowiazywania">
+                    <input type="date" class="form-control" placeholder="Data obowiązywania" value="" name="data_obowiazywania">
                   </div>
-                </div>
-USERS;           
-                    }?>                    
+                </div>                   
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Dodaj</button>
+                  <button type="submit" class="btn btn-primary">Dodaj nowy punkt w menu</button>
                 </div>
               </form>
             </div>
