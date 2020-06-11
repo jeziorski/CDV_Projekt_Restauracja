@@ -75,6 +75,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="./admin7.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Informacje o koncie</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="../../scripts/logout.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Wyloguj</p>
