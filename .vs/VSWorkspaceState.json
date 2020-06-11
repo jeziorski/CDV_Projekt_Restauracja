@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\pages",
-    "\\pages\\layout",
-    "\\scripts"
+    "\\pages\\logged"
   ],
-  "SelectedNode": "\\pages\\layout\\content_client2.php",
+  "SelectedNode": "\\scripts",
   "PreviewInSolutionExplorer": false
 }
