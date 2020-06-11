@@ -13,6 +13,7 @@ session_start();
               $street_num = $_POST['street_num'];
               $flat_num = $_POST['flat_num'];
               $user_id = $_SESSION['logged']['user_id'];
+              $_SESSION['logged']['order']= 'STARTED';
               $status = 1;
               $sql = "INSERT INTO `order_list`(`id_uzytkownika`, `street_name`,`street_num`, `flat_num`, `status`) VALUES (?, ?, ?, ?, ?)";
               $stmt = $conn->prepare($sql); //unikniecie sql-incjection

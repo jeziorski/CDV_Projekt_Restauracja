@@ -4,6 +4,10 @@
     header('location: ../../index.php'); 
     exit();
   }
+  if(!isset($_SESSION['logged']['order']) == 'STARTED'){
+    header('location: ./client1.2.php'); 
+    exit();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

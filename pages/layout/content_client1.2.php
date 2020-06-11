@@ -25,7 +25,7 @@
       
                     <?php
                     require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT m.id_potrawy, m.cena, dl.nazwa_potrawy, dl.opis_potrawy, e.opis_etykiety FROM `menu` as m 
+                    $sql5 = "SELECT m.id_potrawy, m.cena, dl.nazwa_potrawy, dl.opis_potrawy, e.opis_etykiety, m.id_menu FROM `menu` as m 
                     INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy
                     INNER JOIN etykiety as e ON e.id_etykiety=m.id_etykiety
                     WHERE m.data_obowiazywania=CURDATE()";//zamówienia z dzisiaj
@@ -46,7 +46,7 @@
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
                       <div class="form-check">
-                          <input type="checkbox" class="form-check-input" name="$dish[id_potrawy]num">
+                          <input type="checkbox" class="form-check-input" name="$dish[id_menu]">
                           <label class="form-check-label">Zamawiam</label>
                       </div>
                     </div>
