@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -118,10 +121,20 @@
       <div class="col-md-7 ">
         <h2 class="featurette-heading">Kontakt</h2>
         <p class="lead"><b>Restauracja The Thyme</b></p>
-        <p> ul. Kwiatowa 12 </p>
-        <p> 65-234 Poznań </p>
-        <p> Email: thethyme@mail.com </p>
-        <p> Telefon kontaktowy:+48 656 465 212 </p>
+        <?php 
+        require_once'./scripts/connect.php';
+         $sql1 = "SELECT ulica, kod_pocztowy, telefon, mail FROM `contact`";
+         $result1 = $conn->query($sql1);
+         while ($cont = $result1->fetch_assoc()){
+         echo<<<CONTACT
+        <p> ul. $cont[ulica]</p>
+        <p> $cont[kod_pocztowy] </p>
+        <p> Email: $cont[mail] </p>
+        <p> Telefon kontaktowy: $cont[telefon] </p>
+CONTACT;
+                    }
+        ?>
+       
 
       </div>
       <div class="col-md-5">
