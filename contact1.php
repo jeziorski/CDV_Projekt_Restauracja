@@ -1,7 +1,10 @@
+<?php 
+session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -59,26 +62,35 @@
 
 <main role="main">
 
- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="test_1 carousel-item active">
       <img class="d-block w-100" src="img/5.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="img/4.jpg" alt="Second slide">
+      <img class="d-block w-100" src="img/2.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="img/5.jpg" alt="Third slide">
+      <img class="d-block w-100" src="img/3.jpg" alt="Third slide">
     </div>
   </div>
 </div>
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
   <div class="container marketing">
-          <hr class="featurette-divider">
+
+    
+
+
     <!-- START THE FEATURETTES -->
-       
+
+    <hr class="featurette-divider">
     <div class="row featurette">
-      <div class="col-md-7">
-          <h2 class="featurette-heading">Kontakt</h2>
+      <div class="col-md-7 ">
+        <h2 class="featurette-heading">Kontakt</h2>
         <p class="lead"><b>Restauracja The Thyme</b></p>
         <?php 
         require_once'./scripts/connect.php';
@@ -93,22 +105,22 @@
 CONTACT;
                     }
         ?>
+       
+
       </div>
       <div class="col-md-5">
-        <img src="img/7.jpg" class="test1" width="70%" height="70%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/" dy=".3em"></svg>
+<img src = "img/spa.jpg" class="img_1 test" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/></img>
       </div>
     </div>
-        <hr class="featurette-divider">
   </div>
+
 
   <!-- FOOTER -->
   <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
     <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
-
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script></body>
+      <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assetsbs/dist/js/bootstrap.bundle.js"></script></body>
 <script src="./assetsbs/dist/js/bootstrap.js"> </script>
 </html>

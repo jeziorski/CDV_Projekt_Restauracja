@@ -1154,8 +1154,8 @@ pre code {
   .col-md-5 {
     -ms-flex: 0 0 41.666667%;
     flex: 0 0 41.666667%;
-    max-width: 41.666667%;
-    margin-top:70px;
+    max-width: 100%;
+    margin-top:40px;
   }
   .col-md-6 {
     -ms-flex: 0 0 50%;
@@ -2070,6 +2070,9 @@ pre code {
   border-radius: 25px 25px 25px 25px;
 }
 
+.test1 {
+
+}
 .img_1 {
     width:120%;
     height:120%;
@@ -6458,9 +6461,7 @@ a.close.disabled {
   width: 100%;
   overflow: hidden;
 }
-.test1 {
-    height:130%;
-}
+
 
 .carousel-inner::after {
   display: block;
