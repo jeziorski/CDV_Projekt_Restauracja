@@ -9,7 +9,7 @@
     <title>The Thyme</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
-
+       <link rel="shortcut icon" href="img/logo.jpg">
     <!-- Bootstrap core CSS -->
 <link href="./assetsbs/dist/css/bootstrap.css" rel="stylesheet">
 
@@ -49,8 +49,7 @@
         </li>     
       </ul>
       <form class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+<a href = "index.php" class="btn btn-outline-success my-2 my-sm-0" type="submit" ahref = "index.php" >Zamów online</a>
       </form>
     </div>
   </nav>
@@ -90,7 +89,7 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img src="img/andrzej.jpg" class="test rounded-circle" t width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+        <img src="img/andrzej.jpg" class="test rounded-circle" t width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
         <h2> Szef kuchni Daniel Jeziorski</h2>
         <p>Wieloletnie doświadczenie i niesamowite wyczucie smaku. Te dwie rzeczy najlepiej definiują Daniela w swojej pracy.
 Staże u światowej klasy największych kucharzy, tysiące godzin praktyk, prób i dążenia do doskonałości.</p>
@@ -98,7 +97,7 @@ Staże u światowej klasy największych kucharzy, tysiące godzin praktyk, prób
       </div><!-- /.col-lg-4 -->
 
       <div class="col-lg-4">
-        <img src = "img/ja.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+        <img src = "img/ja.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
         <h2>Sous-chef Łukasz Adamczak</h2>
         <p>Prawa ręka Daniela, dziesiątki godzin praktyk u najlepszych, kurs szkoleniowy u samej Magdy Gessler, jak i u francuza, który podbił polskie serca - Michela Morana.</p>
         
@@ -123,7 +122,7 @@ Staże u światowej klasy największych kucharzy, tysiące godzin praktyk, prób
         <p class="lead">W Restauracji The Thyme czeka na Państwa wiele smakowitych dań kuchni śródziemnomorskiej. Menu jest tak skomponowane, by zaspokoić nawet najbardziej wymagające gusta, a dodatkowo – codziennie szef kuchni serwuje niespodziankę w postaci menu dnia. Podawane przez nas potrawy są przygotowywane z wysokiej jakości produktów z dodatkiem pachnących ziół i sezonowych warzyw. Posiadamy również ofertę dań wegetariańskich.</p>
       </div>
       <div class="col-md-5">
-        <img src="img/przyprawy.jpg"  class="bd-placeholder-img test  bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="5000" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/></svg>
+        <img src="img/przyprawy.jpg"  class="bd-placeholder-img test  bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="5000" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/></img>
       </div>
     </div>
 
@@ -167,4 +166,5 @@ Staże u światowej klasy największych kucharzy, tysiące godzin praktyk, prób
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assetsbs/dist/js/bootstrap.bundle.js"></script></body>
+<script src="./assetsbs/dist/js/bootstrap.js"> </script>
 </html>
