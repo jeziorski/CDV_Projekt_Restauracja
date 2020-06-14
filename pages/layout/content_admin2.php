@@ -56,7 +56,7 @@
                     <?php
                     require_once '../../scripts/connect.php';
                     $sql5 = "SELECT m.data_obowiazywania, m.cena, dl.nazwa_potrawy FROM `menu` as m 
-                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy";//dodać ilość zamówień
+                    INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy ORDER BY m.data_obowiazywania desc";//dodać ilość zamówień
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
                     echo<<<DISH
