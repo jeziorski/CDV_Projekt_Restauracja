@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\img"
+    "\\pages",
+    "\\pages\\layout",
+    "\\pages\\logged",
+    "\\scripts"
   ],
-  "SelectedNode": "\\img\\ja.jpg",
+  "SelectedNode": "\\pages\\layout\\aside_admin.php",
   "PreviewInSolutionExplorer": false
 }
