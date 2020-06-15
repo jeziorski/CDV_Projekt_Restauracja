@@ -80,6 +80,8 @@
       <div class="col-md-7">
           <h2 class="featurette-heading">Kontakt</h2>
         <p class="lead"><b>Restauracja The Thyme</b></p>
+
+
         <?php 
         require_once'./scripts/connect.php';
          $sql1 = "SELECT ulica, kod_pocztowy, telefon, mail FROM `contact`";

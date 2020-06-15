@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assetsbs\\dist",
-    "\\img"
+    "\\img",
+    "\\pages",
+    "\\pages\\layout"
   ],
+  "SelectedNode": "\\pages\\layout\\content_admin5.php",
   "PreviewInSolutionExplorer": false
 }
