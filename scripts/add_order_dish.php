@@ -10,19 +10,36 @@ session_start();
           $dish = $_POST['menu'];
           $price = $_POST['cena'];
           $cnt = $_POST['ilosc'];
-          $id_zamowienia = 0;
-          
+          $sql1 = sprintf("SELECT * FROM order_list WHERE id_uzytkownika='%u' AND status=1",
+            mysqli_real_escape_string($conn, $_SESSION['logged']['user_id']));    
+          if($result = $conn->query($sql1)){
+            $count = $result->num_rows;
+            if ($count == 1){
+            $zam = $result->fetch_assoc();  
+            $id_zamowienia = $zam['id_zamowienia'];
+            //znalezienie id_zamowienia ktore jest puste od sql1
+          }
           if(isset($_POST['menu'])){
-              for($i=0;$i<count($dish);$i++){
+            for($i=0;$i<count($dish);$i++){
               $razem = $cnt[$i] * $price[$i];
-              //echo 'wybrano '.$dishname[$i].' w ilosci: '.$cnt[$i].' za łączną watość '.$razem.'</br>'; 
-              $sql = 'INSERT INTO `ordered_dish`(`id_zamowienia`, `id_menu`, `ilosc`, `wartosc`) VALUES (?, ?, ?, ?)';
+              echo 'wybrano '.$dishname[$i].' w ilosci: '.$cnt[$i].' za łączną watość '.$razem.'</br>'; //wyswietlanie zamowienia
+              $sql = "INSERT INTO `ordered_dish`(`id_zamowienia`, `id_menu`, `ilosc`, `wartosc`) VALUES (?, ?, ?, ?)";
               $stmt = $conn->prepare($sql);
-              $stmt = bind_param("iiii", $id_zamowienia,  $dish, $cnt, $razem);
-              }//insert to ordered dish
+              $stmt = bind_param("iiid", $id_zamowienia , $dish[$i], $cnt[$i], $razem);
+              if($stmt->execute()){
+                $_SESSION['success'] = 'Poniżej przygotowano podsumowanie twojego zamówienia';
+                header('location: ../pages/logged/client.1.3.php');//przeniesienie do podsumowania
+                exit();
+              }else{
+                $_SESSION['error'] = 'Pojawił się problem ze składaniem zamówienia, spróbuj ponownie';
+                unset($_SESSION['logged']['order']);
+                header('location: ../pages/logged/client.php');
+              };
+            }//insert to ordered dish
           }else{
-           $_SESSION['error'] = 'Wybierz przynajmniej jedno danie';
+           $_SESSION['error'] = 'Wybierz posiłek i podaj ilość';
            header('location: ../pages/logged/client1.2.php');
           }
+      }
    }  
 ?>

@@ -1,11 +1,10 @@
 <?php
   session_start();
   if(!isset($_SESSION['logged']['email']) || ($_SESSION['logged']['permission']) != '2'){
-    header('location: ../../index.php'); 
-    exit();
+    header('location: ../../index.php');
   }
-  if(!isset($_SESSION['logged']['order']) == 'STARTED'){
-    header('location: ./client1.2.php'); 
+  if($_SESSION['logged']['order'] == 'STARTED'){
+    header('location: ./client1.2.php'); //zmienic na sprawdzeie czy istnieje puste zamowienie tego uzytkownika
     exit();
   }
 ?>
