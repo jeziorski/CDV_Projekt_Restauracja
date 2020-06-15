@@ -7,10 +7,10 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
     <title>The Thyme</title>
-       <link rel="shortcut icon" href="img/logo.jpg">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
-
-<link href="./assetsbs/dist/css/bootstrap.css" rel="stylesheet">
+       <link rel="icon" href="img/logo.jpg">
+       <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+       <link href="./assetsbs/dist/css/bootstrap.css" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -56,19 +56,41 @@
 
 <main role="main">
 
- <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="test_1 carousel-item active">
-      <img class="d-block w-100" src="img/5.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/4.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/4.jpg" alt="Third slide">
-    </div>
-  </div>
-</div>
+  <div id="carouselFull" class=" test4 carousel slide" data-ride="carousel">
+       <ol class="carousel-indicators">
+           <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+           <li data-target="#carouselIndicators" data-slide-to="1"></li>
+           <li data-target="#carouselIndicators" data-slide-to="2"></li>
+       </ol>
+     <div class="carousel-inner">
+           <div class="carousel-item active">
+               <img class="d-block" src="img/szasz.png" alt="First slide">
+               <div class="carousel-caption d-md-block">
+                   <h3>Witamy w The Thyme</h3>
+               </div>
+           </div>
+           <div class="carousel-item">
+               <img class="d-block" src="img/burgers.png" alt="Second slide">
+               <div class="carousel-caption d-md-block">
+                   <h3>Najlepsze jedzenie w okolicy </h3>
+               </div>
+           </div>
+           <div class="carousel-item">
+               <img class="d-block" src="img/pizza.png" alt="Third slide">
+               <div class="carousel-caption d-md-block">
+                   <h3>Wielokrotnie nagradzana jakość jedzenia</h3>
+               </div>
+           </div>
+       </div>
+       <a class="carousel-control-prev" href="#carouselFull" role="button" data-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="sr-only">Previous</span>
+       </a>
+       <a class="carousel-control-next" href="#carouselFull" role="button" data-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="sr-only">Next</span>
+       </a>
+   </div>
 
 <h1 class = "test2">◊ MENU ◊</h1>
 
@@ -114,4 +136,5 @@ MENU;
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.js"></script></body>
 <script src="./assetsbs/dist/js/bootstrap.js"> </script>
+
 </html>

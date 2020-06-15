@@ -51,7 +51,10 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
-
+.test4 {
+    width:100%;
+    height:100%;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -99,6 +102,8 @@ address {
   font-style: normal;
   line-height: inherit;
 }
+
+
 
 ol,
 ul,
@@ -483,7 +488,6 @@ mark,
   max-width: 100%;
   height: auto;
 }
-
 .figure {
   display: inline-block;
 }
@@ -2873,6 +2877,24 @@ fieldset:disabled a.btn {
     text-align:center;
     font-family:'Courier New';
 }
+
+.carousel-caption {
+  padding-bottom: 12%;
+}
+
+  .carousel-caption h3 {
+    font-size: 42px;
+    font-weight: bold;
+ 
+  }
+
+  .carousel-caption p {
+    font-size: 24px;
+    color: #21ddfb;
+  }
+
+
+
 
 .btn-dark.disabled, .btn-dark:disabled {
   color: #fff;

@@ -57,27 +57,41 @@
 
 <main role="main">
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="img/4.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/5.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/spa.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  <div id="carouselFull" class=" test4 carousel slide" data-ride="carousel">
+       <ol class="carousel-indicators">
+           <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+           <li data-target="#carouselIndicators" data-slide-to="1"></li>
+           <li data-target="#carouselIndicators" data-slide-to="2"></li>
+       </ol>
+     <div class="carousel-inner">
+           <div class="carousel-item active">
+               <img class="d-block" src="img/szasz.png" alt="First slide">
+               <div class="carousel-caption d-md-block">
+                   <h3>Witamy w The Thyme</h3>
+               </div>
+           </div>
+           <div class="carousel-item">
+               <img class="d-block" src="img/burgers.png" alt="Second slide">
+               <div class="carousel-caption d-md-block">
+                   <h3>Najlepsze jedzenie w okolicy </h3>
+               </div>
+           </div>
+           <div class="carousel-item">
+               <img class="d-block" src="img/pizza.png" alt="Third slide">
+               <div class="carousel-caption d-md-block">
+                   <h3>Wielokrotnie nagradzana jakość jedzenia</h3>
+               </div>
+           </div>
+       </div>
+       <a class="carousel-control-prev" href="#carouselFull" role="button" data-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="sr-only">Previous</span>
+       </a>
+       <a class="carousel-control-next" href="#carouselFull" role="button" data-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="sr-only">Next</span>
+       </a>
+   </div>
 
 
   <!-- Marketing messaging and featurettes
