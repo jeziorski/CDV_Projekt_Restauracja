@@ -225,14 +225,15 @@ CITY;
                     <tbody>
                     <?php
                     require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT z.street_name, z.street_num, z.flat_num, z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
-                    INNER JOIN order_status as os ON z.status=os.id_status  WHERE id_status='2' || id_status='3' || id_status='4'";//dodać ilość zamówień
+                    $sql5 = "SELECT dl.nazwa_potrawy, od.ilosc, z.street_name, z.street_num, z.flat_num, z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
+                    INNER JOIN order_status as os ON z.status=os.id_status INNER JOIN ordered_dish as od ON od.id_zamowienia=z.id_zamowienia 
+                    INNER JOIN menu as m ON m.id_menu=od.id_menu INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy WHERE id_status='2' || id_status='3' || id_status='4' ORDER BY id_zamowienia";//dodać ilość zamówień
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
                     echo<<<ZAM
                     <tr>                      
                       <td>$dish[id_zamowienia]</td>
-                      <td>$dish[wartosc_zamowienia] zł</td>
+                      <td>$dish[nazwa_potrawy] | $dish[ilosc] szt</td>
                       <td>$dish[street_name]  $dish[street_num] / $dish[flat_num]</td>
 ZAM;
                     switch($dish['nazwa']){
