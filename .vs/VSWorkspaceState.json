@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assetsbs\\dist",
-    "\\img"
+    "\\pages",
+    "\\pages\\logged"
   ],
+  "SelectedNode": "\\contact.php",
   "PreviewInSolutionExplorer": false
 }
