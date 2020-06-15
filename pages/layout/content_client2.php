@@ -36,6 +36,28 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
+              <?php
+        if (isset($_SESSION['error'])) {
+        echo<<<ERROR
+          <div class="alert alert-danger alert-dismissible">
+             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+             <h5><i class="icon fas fa-ban"></i>Błąd!</h5>
+             {$_SESSION['error']}
+          </div>
+ERROR;
+        unset($_SESSION['error']);
+        }
+        if(isset($_SESSION['success'])){
+        echo<<<SUCCESS
+        <div class="alert alert-success alert-dismissible">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <h5><i class="icon fas fa-check"></i> Sukces!</h5>
+          {$_SESSION['success']}
+        </div>
+SUCCESS;
+        unset($_SESSION['success']);
+        }
+        ?>
                 <div class="table-responsive">
                   <table class="table m-0">
                     <thead>

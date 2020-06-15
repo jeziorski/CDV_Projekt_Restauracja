@@ -1,8 +1,10 @@
 <?php
   session_start();
   if(!isset($_SESSION['logged']['email']) || ($_SESSION['logged']['permission']) != '2'){
-    header('location: ../../index.php');
+    header('location: ../../index.php'); 
+    exit();
   }
+  //SELECT * FROM order_list as ol INNER JOIN ordered_dish as od ON ol.id_zamowienia=od.id_zamowienia 
   
 ?>
 <!DOCTYPE html>
@@ -38,7 +40,7 @@
   <!-- /Lewy panel -->
   <!-- Content Wrapper. Zawartość strony -->
   <?php
-  require_once '../layout/content_client1.php';
+  require_once '../layout/content_client1.3.php';
   ?>
   <!-- /.content-wrapper Zawartość strony -->
   <!-- Main Footer -->
