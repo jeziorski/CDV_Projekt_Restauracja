@@ -4392,8 +4392,12 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  text-align:center;
 }
 
+.navbar-srodek {
+
+}
 .navbar .container,
 .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
   display: -ms-flexbox;
@@ -4492,6 +4496,7 @@ input[type="button"].btn-block {
     flex-flow: row nowrap;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    margin-left:30%;
   }
   .navbar-expand-sm .navbar-nav {
     -ms-flex-direction: row;

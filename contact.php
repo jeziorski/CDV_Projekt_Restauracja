@@ -34,25 +34,28 @@
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
-   <header>
+  <header>
+
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="main.php">Strona główna</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
+   
+   <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="menu.php"> Menu<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.php">Kontakt</a>
         </li>     
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
-
-        <a href = "index.php" class="btn btn-outline-success my-2 my-sm-0" type="submit" ahref = "index.php" >Zamów online</a>
+        <li>
+             <form class="form-inline mt-2 mt-md-0">
+<a href = "index.php" class="btn btn-outline-success my-2 my-sm-0" type="submit" ahref = "index.php" >Zamów online</a>
       </form>
+      </li>
+      </ul>
     </div>
   </nav>
 </header>
@@ -127,7 +130,7 @@ CONTACT;
   </div>
   <footer class="container">
     <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  <p><b>Copyright © 2020 Daniel Jeziorski & Łukasz Adamczak</b></p>
   </footer>
 
 </main>

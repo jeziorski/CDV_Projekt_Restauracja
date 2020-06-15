@@ -34,23 +34,27 @@
   </head>
   <body>
     <header>
+
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="main.php">Strona główna</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
+   
+   <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="menu.php"> Menu<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.php">Kontakt</a>
         </li>     
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
+        <li>
+             <form class="form-inline mt-2 mt-md-0">
 <a href = "index.php" class="btn btn-outline-success my-2 my-sm-0" type="submit" ahref = "index.php" >Zamów online</a>
       </form>
+      </li>
+      </ul>
     </div>
   </nav>
 </header>
@@ -103,7 +107,7 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img src="img/andrzej.jpg" class="test rounded-circle" t width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+        <img src="img/chef1.png" class="test rounded-circle" t width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
         <h2> Szef kuchni Daniel Jeziorski</h2>
         <p>Wieloletnie doświadczenie i niesamowite wyczucie smaku. Te dwie rzeczy najlepiej definiują Daniela w swojej pracy.
 Staże u światowej klasy największych kucharzy, tysiące godzin praktyk, prób i dążenia do doskonałości.</p>
@@ -111,14 +115,14 @@ Staże u światowej klasy największych kucharzy, tysiące godzin praktyk, prób
       </div><!-- /.col-lg-4 -->
 
       <div class="col-lg-4">
-        <img src = "img/ja.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+        <img src = "img/chef2.png" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
         <h2>Sous-chef Łukasz Adamczak</h2>
         <p>Prawa ręka Daniela, dziesiątki godzin praktyk u najlepszych, kurs szkoleniowy u samej Magdy Gessler, jak i u francuza, który podbił polskie serca - Michela Morana.</p>
         
       </div><!-- /.col-lg-4 -->
 
       <div class="col-lg-4">
-        <img  src = "img/pakal.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+        <img  src = "img/chef4.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
         <h2>Degustator Jakub Pąkalski</h2>
         <p>Trzecie najważniejsze stanowisko zajmuje Pan Jakub, on jest naszym słynnym degustatorem, który przygotowuje ocenę dań, świetnie wyczuwa niedoskonałości potrawy i jest bezbłędny w swoim fachu.</p>
        
@@ -175,7 +179,7 @@ Staże u światowej klasy największych kucharzy, tysiące godzin praktyk, prób
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <p><b>Copyright © 2020 Daniel Jeziorski & Łukasz Adamczak</b></p>
   </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
