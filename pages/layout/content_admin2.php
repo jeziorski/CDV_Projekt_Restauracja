@@ -48,8 +48,6 @@
                       <th>Nazwa dania</th>
                       <th>Cena za porcję</th>
                       <th>Data obowiązywania</th>
-                      <th>Ilość zamówień</th>
-                      <th>Wartość zamówień</th>
                     </tr>
                     </thead>
                     <tbody>

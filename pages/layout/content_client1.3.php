@@ -64,7 +64,7 @@ SUCCESS;
                     <tr>
                       <th>ID_zamówienia</th>
                       <th>Zawartość zamówienia:</th>
-                      <th>Adres</th>
+                      <th>Ilość</th>
                       <th>Wartość</th>
                     </tr>
                     </thead>

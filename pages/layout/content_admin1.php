@@ -156,7 +156,7 @@ DISH;
                     <?php
                     require_once '../../scripts/connect.php';
                     $sql5 = "SELECT z.id_zamowienia, z.wartosc_zamowienia, os.nazwa, z.data_zlozenia FROM `order_list` as z 
-                    INNER JOIN order_status as os ON z.status=os.id_status ORDER BY z.data_zlozenia desc";//dodać ilość zamówień
+                    INNER JOIN order_status as os ON z.status=os.id_status ORDER BY z.data_zlozenia desc LIMIT 10";//dodać ilość zamówień
                     $result = $conn->query($sql5);
                     while ($dish = $result->fetch_assoc()){
                     echo<<<ZAM
@@ -229,7 +229,6 @@ ZAM;
                       <th>Nazwa dania</th>
                       <th>Cena za porcję</th>
                       <th>Data obowiązywania</th>
-                      <th>Ilość zamówień</th>
                     </tr>
                     </thead>
                     <tbody>
