@@ -10,7 +10,6 @@
        <link rel="shortcut icon" href="img/logo.jpg">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
 
-    <!-- Bootstrap core CSS -->
 <link href="./assetsbs/dist/css/bootstrap.css" rel="stylesheet">
 
     <style>
@@ -29,7 +28,7 @@
         }
       }
     </style>
-    <!-- Custom styles for this template -->
+
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
@@ -71,21 +70,16 @@
   </div>
 </div>
 
-
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
+<h1 class = "test2">◊ MENU ◊</h1>
 
   <div class="container marketing">
-
-    <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
 
         
          <?php
        require_once './scripts/connect.php';
-                    $sql5 = "SELECT m.id_potrawy, m.cena, dl.nazwa_potrawy, dl.opis_potrawy, e.opis_etykiety, m.id_menu FROM `menu` as m 
+                    $sql5 = "SELECT m.id_potrawy, m.cena, dl.nazwa_potrawy, dl.opis_potrawy, dl.img, e.opis_etykiety, m.id_menu FROM `menu` as m 
                     INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy
                     INNER JOIN etykiety as e ON e.id_etykiety=m.id_etykiety
                     WHERE m.data_obowiazywania=CURDATE()";//menu z dzisiaj
@@ -95,18 +89,19 @@
         <div class="row featurette">
         <div class="col-md-7">
         <h1 class="featurette-heading"> $cont[nazwa_potrawy] </h1>
+        <h3 class = "ety"><span style="color: red"> $cont[opis_etykiety] </span></h3>
         <p class="lead">$cont[opis_potrawy]</p>
         <h3> $cont[cena] zł</h3>
       </div>
         <div class="col-md-5">
-        <img src="img/5.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/></svg>
+        <img src="{$cont['img']}" class="test bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/></svg>
       </div>
     </div>
+    <hr class="featurette-divider">
 MENU;
         }
     ?>
-  
-<hr class="featurette-divider">
+ 
   </div>
 
 

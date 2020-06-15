@@ -97,7 +97,7 @@ CONTACT;
         ?>
       </div>
       <div class="col-md-5">
-        <img src="img/7.jpg" class="test1" width="70%" height="70%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/" dy=".3em"></svg>
+        <img src="img/7.jpg" class="test1" width="90%" height="90%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/" dy=".3em"></svg>
       </div>
     </div>
         <hr class="featurette-divider">
