@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
     <title>The Thyme</title>
-       <link rel="icon" href="img/logo.jpg">
+  <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" />
        <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
        <link href="./assetsbs/dist/css/bootstrap.css" rel="stylesheet">
@@ -32,24 +32,28 @@
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
-  <header>
+   <header>
+
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <a class="navbar-brand" href="main.php">Strona główna</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
+   
+   <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="menu.php"> Menu<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.php">Kontakt</a>
         </li>     
-      </ul>
-      <form class="form-inline mt-2 mt-md-0">
+        <li>
+             <form class="form-inline mt-2 mt-md-0">
 <a href = "index.php" class="btn btn-outline-success my-2 my-sm-0" type="submit" ahref = "index.php" >Zamów online</a>
       </form>
+      </li>
+      </ul>
     </div>
   </nav>
 </header>
@@ -111,7 +115,7 @@
         <div class="row featurette">
         <div class="col-md-7">
         <h1 class="featurette-heading"> $cont[nazwa_potrawy] </h1>
-        <h3 class = "ety"><span style="color: red"> $cont[opis_etykiety] </span></h3>
+        <h3 class = "ety"><span style="color: green"> $cont[opis_etykiety] </span></h3>
         <p class="lead">$cont[opis_potrawy]</p>
         <h3> $cont[cena] zł</h3>
       </div>
@@ -130,7 +134,7 @@ MENU;
   <!-- FOOTER -->
   <footer class="container">
     <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  <p><b>Copyright © 2020 Daniel Jeziorski & Łukasz Adamczak</b></p>
   </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
