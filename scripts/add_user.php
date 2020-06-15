@@ -28,7 +28,7 @@
       <?php
     }
 
-    require_once '../scripts/connect.php';
+    require_once './connect.php';
     //dokończyć połączenie z bazą danych
 
     if($conn->connect_errno){
