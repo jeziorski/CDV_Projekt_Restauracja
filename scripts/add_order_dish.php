@@ -21,7 +21,7 @@ session_start();
           if(isset($_POST['menu'])){
             for($i=0;$i<count($dish);$i++){
               $razem = $cnt[$i] * $price[$i];
-              echo $id_zamowienia.' wybrano '.$dishname[$i].' w ilosci: '.$cnt[$i].' za łączną watość '.$razem.'</br>'; //wyswietlanie zamowienia
+              //echo $id_zamowienia.' wybrano '.$dishname[$i].' w ilosci: '.$cnt[$i].' za łączną watość '.$razem.'</br>'; //wyswietlanie zamowienia
               $sql = "INSERT INTO `ordered_dish`(`id_zamowienia`, `id_menu`, `ilosc`, `wartosc`) VALUES ('$id_zamowienia', '$dish[$i]', '$cnt[$i]', '$razem')";
               $stmt = $conn->prepare($sql);
               $stmt->execute();}

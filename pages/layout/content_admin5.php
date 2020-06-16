@@ -222,12 +222,13 @@ CITY;
                       <th>Ostatnie logowanie</th>
                       <th>Telefon</th>
                       <th>Adres</th>
+                      <th>Nazwisko</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php 
                     require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT u.id, u.email, p.permission, s.status, u.last_login, u.phone, u.street_name, u.street_num, u.flat_num  FROM `user` as u 
+                    $sql5 = "SELECT u.id, u.email, p.permission, s.status, u.last_login, u.phone, u.street_name, u.street_num, u.flat_num, u.name, u.surname  FROM `user` as u 
                     INNER JOIN permission as p ON u.permission_id=p.id 
                     INNER JOIN status as s ON u.status_id=s.id";
                     $result = $conn->query($sql5);
@@ -267,6 +268,7 @@ USERS;
                     <td>$user[last_login]</td>
                     <td>$user[phone]</td>
                     <td>$user[street_name] $user[street_num] $user[flat_num]</td>
+                    <td>$user[name] $user[surname]</td>
 USERS;                   
                     }
                     
