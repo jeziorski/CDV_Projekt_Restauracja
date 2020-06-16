@@ -207,9 +207,6 @@ CITY;
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
                   </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -223,12 +220,14 @@ CITY;
                       <th>Uprawnienia</th>
                       <th>Status</th>
                       <th>Ostatnie logowanie</th>
+                      <th>Telefon</th>
+                      <th>Adres</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php 
                     require_once '../../scripts/connect.php';
-                    $sql5 = "SELECT u.id, u.email, p.permission, s.status, u.last_login FROM `user` as u 
+                    $sql5 = "SELECT u.id, u.email, p.permission, s.status, u.last_login, u.phone, u.street_name, u.street_num, u.flat_num  FROM `user` as u 
                     INNER JOIN permission as p ON u.permission_id=p.id 
                     INNER JOIN status as s ON u.status_id=s.id";
                     $result = $conn->query($sql5);
@@ -266,6 +265,8 @@ USERS;
                     }else{
                     echo <<<USERS
                     <td>$user[last_login]</td>
+                    <td>$user[phone]</td>
+                    <td>$user[street_name] $user[street_num] $user[flat_num]</td>
 USERS;                   
                     }
                     

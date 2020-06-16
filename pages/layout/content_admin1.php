@@ -204,8 +204,8 @@ ZAM;
             </div>
             <!-- /.card -->
           </div>
-          
-          
+          </div>
+        <div class="row">
           <!-- Dzisiejsze menu -->
           <!-- /.col -->
           <div class="col-md-12"> 
@@ -255,6 +255,107 @@ DISH;
               <div class="card-footer clearfix">
                 <a href="./admin.php" class="btn btn-sm btn-info float-left">Odśwież</a>
                 <a href="./admin2.php" class="btn btn-sm btn-secondary float-right">Edytuj dzisiejsze menu</a>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"> 
+            <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Zamówione potrawy (od początku):</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>Nazwa dania</th>
+                      <th>Ilość zamówień</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    require_once '../../scripts/connect.php';
+                    $sql5 = "SELECT m.data_obowiazywania, m.cena, dl.nazwa_potrawy, SUM(od.ilosc) as ilosc FROM menu as m INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy INNER JOIN ordered_dish as od ON m.id_menu=od.id_menu GROUP BY dl.nazwa_potrawy ORDER BY m.data_obowiazywania desc";//dodać ilość zamówień
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<DISH
+                    <tr>                      
+                      <td>$dish[nazwa_potrawy]</td>
+                      <td>$dish[ilosc]</td>
+                    </tr>
+DISH;
+                    }?>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <a href="./admin.php" class="btn btn-sm btn-info float-left">Odśwież</a>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col --> 
+        <div class="col-md-6"> 
+            <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Zamówione potrawy (dzisiaj):</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>Nazwa dania</th>
+                      <th>Ilość zamówień</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    require_once '../../scripts/connect.php';
+                    $sql5 = "SELECT m.data_obowiazywania, m.cena, dl.nazwa_potrawy, SUM(od.ilosc) as ilosc FROM menu as m INNER JOIN dish_list as dl ON m.id_potrawy=dl.id_potrawy INNER JOIN ordered_dish as od ON m.id_menu=od.id_menu WHERE date(data_obowiazywania)=CURDATE() GROUP BY dl.nazwa_potrawy desc ";//dodać ilość zamówień
+                    $result = $conn->query($sql5);
+                    while ($dish = $result->fetch_assoc()){
+                    echo<<<DISH
+                    <tr>                      
+                      <td>$dish[nazwa_potrawy]</td>
+                      <td>$dish[ilosc]</td>
+                    </tr>
+DISH;
+                    }?>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <a href="./admin.php" class="btn btn-sm btn-info float-left">Odśwież</a>
               </div>
               <!-- /.card-footer -->
             </div>

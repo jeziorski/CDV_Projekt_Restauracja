@@ -9,7 +9,7 @@ session_start();
           $dish = $_POST['menu'];
           $price = $_POST['cena'];
           $cnt = $_POST['ilosc'];
-          $sql1 = sprintf("SELECT * FROM order_list WHERE id_uzytkownika='%u' AND status=1",
+          $sql1 = sprintf("SELECT * FROM order_list WHERE id_uzytkownika='%u' AND status=1 limit 1",
             mysqli_real_escape_string($conn, $_SESSION['logged']['user_id']));    
           if($result = $conn->query($sql1)){
             $count = $result->num_rows;

@@ -6,8 +6,7 @@ session_start();
       }
       else{
         if(!isset($_POST['odbior'])){
-           if(!empty($_POST['street_name']) && !empty($_POST['street_num']) 
-           && !empty($_POST['flat_num'])){
+           if(!empty($_POST['street_name']) && !empty($_POST['street_num'])){
               require_once './connect.php';
               $street_name = $_POST['street_name'];
               $street_num = $_POST['street_num'];
